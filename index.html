@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZEUS IQ · Test Your Intelligence</title>
+    <title>ZEUS HUB · Intelligence Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,17 +13,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a12;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #f7c948, #d4941a);
-            border-radius: 10px;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a12; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #f7c948, #d4941a); border-radius: 10px; }
 
         body {
             font-family: 'Exo 2', sans-serif;
@@ -36,10 +28,8 @@
         /* ===== PARTICLES ===== */
         #particles-canvas {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: 0;
             pointer-events: none;
         }
@@ -47,22 +37,22 @@
         /* ===== AMBIENT GLOW ===== */
         .ambient-glow {
             position: fixed;
-            width: 600px;
-            height: 600px;
+            width: 600px; height: 600px;
             border-radius: 50%;
             filter: blur(120px);
-            opacity: 0.15;
+            opacity: 0.12;
             z-index: 0;
             pointer-events: none;
-            animation: ambientPulse 6s ease-in-out infinite alternate;
+            animation: ambientPulse 7s ease-in-out infinite alternate;
         }
         .ambient-glow.g1 { background: #f7c948; top: -10%; left: -5%; }
-        .ambient-glow.g2 { background: #d4941a; bottom: -10%; right: -5%; animation-delay: 2s; }
-        .ambient-glow.g3 { background: #7b2ff7; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 4s; width: 800px; height: 800px; opacity: 0.08; }
+        .ambient-glow.g2 { background: #7b2ff7; bottom: -10%; right: -5%; animation-delay: 2.5s; }
+        .ambient-glow.g3 { background: #06b6d4; top: 30%; left: 60%; animation-delay: 5s; width: 500px; height: 500px; }
+        .ambient-glow.g4 { background: #f7c948; top: 60%; left: 10%; animation-delay: 3.5s; width: 400px; height: 400px; }
 
         @keyframes ambientPulse {
-            0% { opacity: 0.1; transform: scale(1); }
-            100% { opacity: 0.2; transform: scale(1.2); }
+            0% { opacity: 0.08; transform: scale(1); }
+            100% { opacity: 0.18; transform: scale(1.25); }
         }
 
         /* ===== PRELOADER ===== */
@@ -77,31 +67,29 @@
             justify-content: center;
             transition: opacity 0.8s, visibility 0.8s;
         }
-        #preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
+        #preloader.hidden { opacity: 0; visibility: hidden; }
         .loader-zeus {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 900;
             background: linear-gradient(135deg, #f7c948, #fff7d6, #d4941a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 40px rgba(247,201,72,0.3);
+            text-shadow: 0 0 60px rgba(247,201,72,0.2);
             animation: loaderPulse 1.5s ease-in-out infinite;
-            letter-spacing: 8px;
+            letter-spacing: 10px;
         }
         .loader-sub {
             font-family: 'Rajdhani', sans-serif;
-            color: #888;
-            margin-top: 20px;
-            letter-spacing: 6px;
+            color: #666;
+            margin-top: 16px;
+            letter-spacing: 8px;
             font-size: 0.9rem;
+            text-transform: uppercase;
         }
         .loader-bar {
             margin-top: 30px;
-            width: 200px;
+            width: 220px;
             height: 3px;
             background: #1a1a2e;
             border-radius: 10px;
@@ -116,7 +104,7 @@
         }
         @keyframes loaderPulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.04); }
         }
         @keyframes loaderFill {
             0% { width: 0%; }
@@ -126,22 +114,21 @@
         /* ===== NAVBAR ===== */
         .navbar {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 18px 50px;
+            padding: 16px 40px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(10,10,18,0.75);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(247,201,72,0.1);
+            background: rgba(10,10,18,0.7);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(247,201,72,0.06);
             transition: all 0.4s;
         }
         .navbar.scrolled {
             background: rgba(10,10,18,0.92);
-            border-bottom-color: rgba(247,201,72,0.2);
+            border-bottom-color: rgba(247,201,72,0.15);
         }
         .nav-logo {
             display: flex;
@@ -150,8 +137,8 @@
             text-decoration: none;
         }
         .nav-logo-icon {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             background: linear-gradient(135deg, #f7c948, #d4941a);
             border-radius: 10px;
             display: flex;
@@ -159,44 +146,45 @@
             justify-content: center;
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #0a0a12;
-            box-shadow: 0 0 20px rgba(247,201,72,0.3);
+            box-shadow: 0 0 20px rgba(247,201,72,0.25);
         }
         .nav-logo-text {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             background: linear-gradient(135deg, #f7c948, #fff7d6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .nav-logo-text span {
             font-weight: 400;
-            -webkit-text-fill-color: #888;
-            font-size: 0.9rem;
+            -webkit-text-fill-color: #777;
+            font-size: 0.8rem;
         }
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 24px;
             list-style: none;
         }
         .nav-links a {
-            color: #aaa;
+            color: #999;
             text-decoration: none;
             font-family: 'Rajdhani', sans-serif;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: color 0.3s;
             position: relative;
+            padding: 4px 0;
         }
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -2px;
             left: 0;
             width: 0;
             height: 2px;
@@ -205,27 +193,28 @@
         }
         .nav-links a:hover { color: #f7c948; }
         .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: #f7c948; }
+        .nav-links a.active::after { width: 100%; }
 
         .nav-premium-btn {
-            padding: 10px 24px;
+            padding: 8px 20px;
             background: linear-gradient(135deg, #f7c948, #d4941a);
             border: none;
             border-radius: 50px;
             color: #0a0a12;
             font-family: 'Rajdhani', sans-serif;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 0 25px rgba(247,201,72,0.2);
+            box-shadow: 0 0 25px rgba(247,201,72,0.15);
         }
         .nav-premium-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 40px rgba(247,201,72,0.4);
+            box-shadow: 0 0 40px rgba(247,201,72,0.35);
         }
-
         .hamburger {
             display: none;
             flex-direction: column;
@@ -233,7 +222,7 @@
             cursor: pointer;
         }
         .hamburger span {
-            width: 28px;
+            width: 26px;
             height: 2px;
             background: #f7c948;
             border-radius: 10px;
@@ -256,51 +245,45 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 20px;
-            background: rgba(247,201,72,0.08);
-            border: 1px solid rgba(247,201,72,0.2);
+            padding: 8px 22px;
+            background: rgba(247,201,72,0.06);
+            border: 1px solid rgba(247,201,72,0.15);
             border-radius: 50px;
             font-family: 'Rajdhani', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: #f7c948;
             margin-bottom: 30px;
             animation: fadeInUp 0.8s ease-out;
         }
-        .hero-badge i {
-            font-size: 0.7rem;
-        }
         .hero h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2.8rem, 8vw, 7rem);
+            font-size: clamp(2.5rem, 7vw, 6rem);
             font-weight: 900;
             line-height: 1.05;
             margin-bottom: 20px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
+            animation: fadeInUp 0.8s ease-out 0.15s both;
         }
         .hero h1 .gold {
             background: linear-gradient(135deg, #f7c948, #ffd700, #f7c948);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: shimmer 3s ease-in-out infinite;
+            animation: shimmer 3.5s ease-in-out infinite;
         }
-        .hero h1 .white {
-            color: #fff;
-            -webkit-text-fill-color: #fff;
-        }
+        .hero h1 .white { color: #fff; -webkit-text-fill-color: #fff; }
         @keyframes shimmer {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #999;
             max-width: 600px;
             line-height: 1.7;
-            margin-bottom: 40px;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+            margin-bottom: 36px;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
             font-weight: 300;
         }
         .hero-actions {
@@ -308,7 +291,7 @@
             gap: 16px;
             flex-wrap: wrap;
             justify-content: center;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
         }
         .btn-primary {
             padding: 16px 40px;
@@ -323,16 +306,16 @@
             letter-spacing: 2px;
             cursor: pointer;
             transition: all 0.4s;
-            box-shadow: 0 0 30px rgba(247,201,72,0.2);
+            box-shadow: 0 0 30px rgba(247,201,72,0.15);
         }
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 50px rgba(247,201,72,0.4);
+            box-shadow: 0 0 50px rgba(247,201,72,0.35);
         }
         .btn-secondary {
             padding: 16px 40px;
             background: transparent;
-            border: 1px solid rgba(247,201,72,0.3);
+            border: 1px solid rgba(247,201,72,0.25);
             border-radius: 50px;
             color: #f7c948;
             font-family: 'Exo 2', sans-serif;
@@ -344,22 +327,20 @@
             transition: all 0.4s;
         }
         .btn-secondary:hover {
-            background: rgba(247,201,72,0.08);
+            background: rgba(247,201,72,0.06);
             border-color: #f7c948;
+            transform: translateY(-2px);
         }
-
         .hero-stats {
             display: flex;
             gap: 50px;
-            margin-top: 60px;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
+            margin-top: 50px;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
         }
-        .hero-stat {
-            text-align: center;
-        }
+        .hero-stat { text-align: center; }
         .hero-stat .num {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 700;
             background: linear-gradient(135deg, #f7c948, #fff7d6);
             -webkit-background-clip: text;
@@ -367,19 +348,17 @@
         }
         .hero-stat .label {
             font-family: 'Rajdhani', sans-serif;
-            color: #666;
+            color: #555;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             margin-top: 4px;
         }
-
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== SCROLL INDICATOR ===== */
         .scroll-indicator {
             position: absolute;
             bottom: 30px;
@@ -389,17 +368,16 @@
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            color: #555;
+            color: #444;
             font-family: 'Rajdhani', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             letter-spacing: 3px;
             text-transform: uppercase;
             animation: bounceDown 2s ease-in-out infinite;
         }
         .scroll-indicator .mouse {
-            width: 24px;
-            height: 38px;
-            border: 2px solid rgba(247,201,72,0.2);
+            width: 22px; height: 36px;
+            border: 2px solid rgba(247,201,72,0.15);
             border-radius: 12px;
             position: relative;
         }
@@ -409,8 +387,7 @@
             top: 6px;
             left: 50%;
             transform: translateX(-50%);
-            width: 3px;
-            height: 8px;
+            width: 3px; height: 8px;
             background: #f7c948;
             border-radius: 10px;
             animation: scrollDot 2s ease-in-out infinite;
@@ -434,43 +411,85 @@
             font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             letter-spacing: 5px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #f7c948;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-align: center;
         }
         .section-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(1.8rem, 4vw, 3rem);
             font-weight: 800;
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
         .section-sub {
             text-align: center;
             color: #777;
-            max-width: 550px;
-            margin: 0 auto 60px;
+            max-width: 500px;
+            margin: 0 auto 50px;
             font-weight: 300;
             line-height: 1.7;
         }
 
-        /* ===== IQ CATEGORIES ===== */
-        .categories {
-            background: linear-gradient(180deg, #0a0a12 0%, #0f0f1a 100%);
+        /* ===== TAB NAVIGATION ===== */
+        .hub-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 16px;
+            padding: 6px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
+        .hub-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            color: #666;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .hub-tab:hover { color: #f7c948; background: rgba(247,201,72,0.04); }
+        .hub-tab.active {
+            background: linear-gradient(135deg, rgba(247,201,72,0.12), rgba(212,148,26,0.08));
+            color: #f7c948;
+            box-shadow: 0 0 20px rgba(247,201,72,0.05);
+        }
+        .hub-tab i { margin-right: 6px; }
+
+        /* ===== TAB CONTENT ===== */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: tabFade 0.4s ease-out; }
+        @keyframes tabFade {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== IQ TESTS GRID ===== */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
         .category-card {
             background: rgba(255,255,255,0.02);
             border: 1px solid rgba(255,255,255,0.04);
-            border-radius: 20px;
-            padding: 40px 30px;
+            border-radius: 18px;
+            padding: 32px 24px;
             text-align: center;
             transition: all 0.5s;
             position: relative;
@@ -480,48 +499,45 @@
         .category-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(247,201,72,0.05), transparent);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(247,201,72,0.04), transparent);
             opacity: 0;
             transition: opacity 0.5s;
         }
         .category-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(247,201,72,0.2);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            transform: translateY(-6px);
+            border-color: rgba(247,201,72,0.15);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.3);
         }
         .category-card:hover::before { opacity: 1; }
         .category-card .icon-wrap {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 24px;
-            background: rgba(247,201,72,0.08);
-            border-radius: 18px;
+            width: 60px; height: 60px;
+            margin: 0 auto 20px;
+            background: rgba(247,201,72,0.06);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: #f7c948;
             transition: all 0.4s;
         }
         .category-card:hover .icon-wrap {
-            background: rgba(247,201,72,0.15);
-            transform: scale(1.1);
+            background: rgba(247,201,72,0.12);
+            transform: scale(1.08);
         }
         .category-card h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .category-card p {
             color: #777;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 16px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 14px;
         }
         .category-card .questions-count {
             display: inline-flex;
@@ -529,18 +545,18 @@
             gap: 6px;
             font-family: 'Rajdhani', sans-serif;
             color: #f7c948;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
         }
         .category-card .premium-tag {
             position: absolute;
-            top: 16px;
-            right: 16px;
-            padding: 4px 12px;
+            top: 14px;
+            right: 14px;
+            padding: 4px 10px;
             background: linear-gradient(135deg, #f7c948, #d4941a);
             border-radius: 50px;
             font-family: 'Rajdhani', sans-serif;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 700;
             color: #0a0a12;
             text-transform: uppercase;
@@ -559,76 +575,63 @@
             justify-content: center;
             padding: 20px;
         }
-        .quiz-modal-overlay.active {
-            display: flex;
-        }
+        .quiz-modal-overlay.active { display: flex; }
         .quiz-modal {
             background: #12121e;
-            border: 1px solid rgba(247,201,72,0.15);
+            border: 1px solid rgba(247,201,72,0.12);
             border-radius: 24px;
             width: 100%;
-            max-width: 650px;
+            max-width: 600px;
             max-height: 90vh;
             overflow-y: auto;
-            padding: 40px;
+            padding: 36px;
             position: relative;
-            animation: modalIn 0.4s ease-out;
+            animation: modalIn 0.35s ease-out;
         }
         @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            from { opacity: 0; transform: scale(0.92) translateY(20px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
         .quiz-modal-close {
             position: absolute;
-            top: 20px;
-            right: 24px;
+            top: 18px;
+            right: 22px;
             background: none;
             border: none;
             color: #555;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             cursor: pointer;
             transition: color 0.3s;
         }
         .quiz-modal-close:hover { color: #f7c948; }
 
-        .quiz-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .quiz-header .quiz-category-icon {
-            font-size: 2.5rem;
-            color: #f7c948;
-            margin-bottom: 12px;
-        }
-        .quiz-header h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
-        }
+        .quiz-header { text-align: center; margin-bottom: 28px; }
+        .quiz-header .quiz-category-icon { font-size: 2.2rem; color: #f7c948; margin-bottom: 10px; }
+        .quiz-header h2 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; }
         .quiz-header .quiz-meta {
             display: flex;
             justify-content: center;
-            gap: 24px;
-            margin-top: 12px;
+            gap: 20px;
+            margin-top: 10px;
             font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #666;
         }
         .quiz-header .quiz-meta i { color: #f7c948; margin-right: 4px; }
 
         .quiz-timer-bar {
-            width: 100%;
-            height: 4px;
+            width: 100%; height: 4px;
             background: #1a1a2e;
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
         .quiz-timer-fill {
             height: 100%;
             width: 100%;
-            background: linear-gradient(90deg, #f7c948, #ff6b35);
+            background: linear-gradient(90deg, #22c55e, #f7c948);
             border-radius: 10px;
             transition: width 0.1s linear;
         }
@@ -637,94 +640,66 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             font-family: 'Rajdhani', sans-serif;
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
-        .quiz-progress .qp-current {
-            color: #f7c948;
-            font-weight: 700;
-        }
+        .quiz-progress .qp-current { color: #f7c948; font-weight: 700; }
 
         .quiz-question {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 500;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             line-height: 1.5;
-            min-height: 60px;
+            min-height: 54px;
         }
 
-        .quiz-options {
-            display: grid;
-            gap: 12px;
-        }
+        .quiz-options { display: grid; gap: 10px; }
         .quiz-option {
-            padding: 16px 20px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 14px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 14px;
-            font-size: 1rem;
+            gap: 12px;
+            font-size: 0.95rem;
         }
         .quiz-option:hover {
-            background: rgba(247,201,72,0.06);
-            border-color: rgba(247,201,72,0.15);
+            background: rgba(247,201,72,0.04);
+            border-color: rgba(247,201,72,0.1);
         }
         .quiz-option .letter {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.04);
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.03);
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Rajdhani', sans-serif;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #888;
             flex-shrink: 0;
         }
-        .quiz-option.selected {
-            border-color: #f7c948;
-            background: rgba(247,201,72,0.08);
-        }
-        .quiz-option.selected .letter {
-            background: #f7c948;
-            color: #0a0a12;
-        }
-        .quiz-option.correct {
-            border-color: #22c55e;
-            background: rgba(34,197,94,0.1);
-        }
-        .quiz-option.correct .letter {
-            background: #22c55e;
-            color: #0a0a12;
-        }
-        .quiz-option.wrong {
-            border-color: #ef4444;
-            background: rgba(239,68,68,0.1);
-        }
-        .quiz-option.wrong .letter {
-            background: #ef4444;
-            color: #fff;
-        }
-        .quiz-option.disabled {
-            pointer-events: none;
-            opacity: 0.6;
-        }
+        .quiz-option.selected { border-color: #f7c948; background: rgba(247,201,72,0.06); }
+        .quiz-option.selected .letter { background: #f7c948; color: #0a0a12; }
+        .quiz-option.correct { border-color: #22c55e; background: rgba(34,197,94,0.08); }
+        .quiz-option.correct .letter { background: #22c55e; color: #0a0a12; }
+        .quiz-option.wrong { border-color: #ef4444; background: rgba(239,68,68,0.08); }
+        .quiz-option.wrong .letter { background: #ef4444; color: #fff; }
+        .quiz-option.disabled { pointer-events: none; opacity: 0.6; }
 
         .quiz-next-btn {
-            margin-top: 24px;
+            margin-top: 20px;
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             background: linear-gradient(135deg, #f7c948, #d4941a);
             border: none;
-            border-radius: 14px;
+            border-radius: 12px;
             color: #0a0a12;
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
@@ -733,164 +708,437 @@
             transition: all 0.3s;
             display: none;
         }
-        .quiz-next-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(247,201,72,0.2); }
+        .quiz-next-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(247,201,72,0.15); }
 
-        /* ===== RESULTS ===== */
-        .quiz-results {
-            text-align: center;
-            display: none;
-        }
-        .quiz-results .result-icon {
-            font-size: 4rem;
-            margin-bottom: 16px;
-        }
+        .quiz-results { text-align: center; display: none; }
+        .quiz-results .result-icon { font-size: 3.5rem; margin-bottom: 14px; }
         .quiz-results .result-score {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 900;
             background: linear-gradient(135deg, #f7c948, #fff7d6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .quiz-results .result-label {
-            color: #888;
-            font-size: 1rem;
-            margin-top: 4px;
-        }
+        .quiz-results .result-label { color: #888; font-size: 0.95rem; margin-top: 4px; }
         .quiz-results .result-details {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin: 24px 0;
+            gap: 28px;
+            margin: 20px 0;
         }
-        .quiz-results .result-detail {
-            text-align: center;
-        }
+        .quiz-results .result-detail { text-align: center; }
         .quiz-results .result-detail .rd-num {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #f7c948;
         }
         .quiz-results .result-detail .rd-label {
             font-family: 'Rajdhani', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #666;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         .result-premium-cta {
-            margin-top: 20px;
-            padding: 16px;
-            background: rgba(247,201,72,0.06);
-            border: 1px dashed rgba(247,201,72,0.2);
-            border-radius: 14px;
+            margin-top: 18px;
+            padding: 14px;
+            background: rgba(247,201,72,0.04);
+            border: 1px dashed rgba(247,201,72,0.15);
+            border-radius: 12px;
         }
-        .result-premium-cta p {
-            font-size: 0.9rem;
-            color: #aaa;
+        .result-premium-cta p { font-size: 0.85rem; color: #aaa; margin-bottom: 10px; }
+
+        /* ===== DASHBOARD ===== */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+        .dash-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 16px;
+            padding: 28px 22px;
+            text-align: center;
+            transition: all 0.4s;
+        }
+        .dash-card:hover {
+            border-color: rgba(247,201,72,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+        .dash-card .dc-icon {
+            font-size: 2rem;
+            color: #f7c948;
             margin-bottom: 12px;
         }
-
-        /* ===== PREMIUM SECTION ===== */
-        .premium-section {
-            background: linear-gradient(180deg, #0f0f1a 0%, #0a0a12 100%);
+        .dash-card .dc-num {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f7c948, #fff7d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+        .dash-card .dc-label {
+            font-family: 'Rajdhani', sans-serif;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+
+        .recent-activity {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.01);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 28px;
+        }
+        .recent-activity h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            color: #f7c948;
+        }
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .activity-item:last-child { border-bottom: none; }
+        .activity-item .ai-icon {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            background: rgba(247,201,72,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f7c948;
+            flex-shrink: 0;
+        }
+        .activity-item .ai-text { flex: 1; }
+        .activity-item .ai-text .ai-title {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .activity-item .ai-text .ai-meta {
+            font-size: 0.75rem;
+            color: #555;
+            font-family: 'Rajdhani', sans-serif;
+        }
+        .activity-item .ai-score {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #f7c948;
+        }
+        .empty-dash {
+            text-align: center;
+            padding: 40px;
+            color: #555;
+        }
+        .empty-dash i { font-size: 2.5rem; margin-bottom: 12px; color: #333; }
+        .empty-dash p { font-size: 0.9rem; }
+
+        /* ===== LEADERBOARD ===== */
+        .leaderboard-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.01);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+        .lb-header {
+            display: grid;
+            grid-template-columns: 60px 1fr 120px 120px;
+            padding: 16px 24px;
+            background: rgba(247,201,72,0.04);
+            border-bottom: 1px solid rgba(247,201,72,0.06);
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.75rem;
+            color: #888;
+        }
+        .lb-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 120px 120px;
+            padding: 14px 24px;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+            transition: background 0.3s;
+        }
+        .lb-row:hover { background: rgba(247,201,72,0.02); }
+        .lb-row:last-child { border-bottom: none; }
+        .lb-row .lb-rank {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .lb-row .lb-rank.top1 { color: #f7c948; }
+        .lb-row .lb-rank.top2 { color: #c0c0c0; }
+        .lb-row .lb-rank.top3 { color: #cd7f32; }
+        .lb-row .lb-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .lb-row .lb-name .medal { font-size: 1.2rem; }
+        .lb-row .lb-name .name-text { color: #ccc; font-size: 0.95rem; }
+        .lb-row .lb-name .prem-badge-mini {
+            font-size: 0.6rem;
+            color: #f7c948;
+        }
+        .lb-row .lb-score {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            color: #f7c948;
+        }
+        .lb-row .lb-avg {
+            color: #888;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+        }
+        .lb-you {
+            background: rgba(247,201,72,0.04);
+            border-left: 3px solid #f7c948;
+        }
+
+        /* ===== TOOLS ===== */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .tool-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 16px;
+            padding: 28px 22px;
+            text-align: center;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+        .tool-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(247,201,72,0.15);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.25);
+        }
+        .tool-card .tc-icon {
+            width: 56px; height: 56px;
+            margin: 0 auto 16px;
+            background: rgba(247,201,72,0.06);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #f7c948;
+            transition: all 0.3s;
+        }
+        .tool-card:hover .tc-icon {
+            background: rgba(247,201,72,0.12);
+            transform: scale(1.08);
+        }
+        .tool-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .tool-card p {
+            color: #777;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+        .tool-card .prem-badge-sm {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 3px 12px;
+            background: linear-gradient(135deg, #f7c948, #d4941a);
+            border-radius: 50px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: #0a0a12;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== MARKETPLACE ===== */
+        .marketplace-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .mkt-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 18px;
+            padding: 24px;
+            transition: all 0.4s;
+        }
+        .mkt-item:hover {
+            transform: translateY(-6px);
+            border-color: rgba(247,201,72,0.12);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.25);
+        }
+        .mkt-item .mkt-preview {
+            width: 100%;
+            height: 140px;
+            background: rgba(247,201,72,0.04);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: rgba(247,201,72,0.2);
+        }
+        .mkt-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .mkt-item .mkt-desc {
+            color: #777;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .mkt-item .mkt-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .mkt-item .mkt-price {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: #f7c948;
+            font-size: 1.1rem;
+        }
+        .mkt-item .mkt-btn {
+            padding: 8px 18px;
+            background: linear-gradient(135deg, #f7c948, #d4941a);
+            border: none;
+            border-radius: 50px;
+            color: #0a0a12;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .mkt-item .mkt-btn:hover { transform: scale(1.05); }
+
+        /* ===== PREMIUM ===== */
         .premium-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            max-width: 1100px;
             margin: 0 auto;
         }
         .premium-card {
             background: rgba(255,255,255,0.02);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: 20px;
-            padding: 40px 30px;
+            padding: 36px 28px;
             text-align: center;
             transition: all 0.4s;
         }
         .premium-card.featured {
-            border-color: rgba(247,201,72,0.2);
-            background: rgba(247,201,72,0.03);
+            border-color: rgba(247,201,72,0.18);
+            background: rgba(247,201,72,0.02);
+            transform: scale(1.02);
         }
         .premium-card.featured .prem-badge {
             display: inline-block;
-            padding: 4px 16px;
+            padding: 4px 14px;
             background: linear-gradient(135deg, #f7c948, #d4941a);
             border-radius: 50px;
             font-family: 'Rajdhani', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             color: #0a0a12;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
-        .premium-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-        }
+        .premium-card h3 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; margin-bottom: 10px; }
         .premium-card .price {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 900;
             background: linear-gradient(135deg, #f7c948, #fff7d6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 16px 0;
+            margin: 14px 0;
         }
         .premium-card .price span {
-            font-size: 1rem;
+            font-size: 0.9rem;
             -webkit-text-fill-color: #666;
         }
         .premium-card ul {
             list-style: none;
             text-align: left;
-            margin: 20px 0;
+            margin: 18px 0;
         }
         .premium-card ul li {
-            padding: 10px 0;
+            padding: 9px 0;
             color: #aaa;
-            font-size: 0.9rem;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .premium-card ul li i {
-            color: #f7c948;
-            width: 20px;
-        }
+        .premium-card ul li i { color: #f7c948; width: 18px; }
 
         .premium-code-section {
-            max-width: 500px;
-            margin: 60px auto 0;
+            max-width: 460px;
+            margin: 50px auto 0;
             text-align: center;
         }
         .premium-code-section h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
         }
         .premium-code-section p {
             color: #777;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 18px;
         }
         .premium-input-group {
             display: flex;
-            gap: 12px;
-            max-width: 400px;
+            gap: 10px;
+            max-width: 380px;
             margin: 0 auto;
         }
         .premium-input-group input {
             flex: 1;
-            padding: 14px 20px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 18px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 12px;
             color: #fff;
             font-family: 'Exo 2', sans-serif;
@@ -901,227 +1149,187 @@
             letter-spacing: 4px;
             font-weight: 700;
         }
-        .premium-input-group input:focus {
-            border-color: #f7c948;
-        }
-        .premium-input-group input::placeholder {
-            letter-spacing: 1px;
-            font-weight: 400;
-            color: #555;
-        }
+        .premium-input-group input:focus { border-color: #f7c948; }
+        .premium-input-group input::placeholder { letter-spacing: 1px; font-weight: 400; color: #444; }
         .premium-input-group button {
-            padding: 14px 28px;
+            padding: 12px 24px;
             background: linear-gradient(135deg, #f7c948, #d4941a);
             border: none;
             border-radius: 12px;
             color: #0a0a12;
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.3s;
         }
-        .premium-input-group button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(247,201,72,0.2);
-        }
-        .premium-code-msg {
-            margin-top: 12px;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 0.9rem;
-            min-height: 24px;
-        }
+        .premium-input-group button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(247,201,72,0.15); }
+        .premium-code-msg { margin-top: 10px; font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; min-height: 22px; }
         .premium-code-msg.success { color: #22c55e; }
         .premium-code-msg.error { color: #ef4444; }
 
-        /* ===== CONTACT / WA ===== */
-        .contact-section {
-            background: #0a0a12;
-        }
+        /* ===== CONTACT ===== */
         .wa-banner {
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
-            background: rgba(37,211,102,0.04);
-            border: 1px solid rgba(37,211,102,0.1);
+            background: rgba(37,211,102,0.03);
+            border: 1px solid rgba(37,211,102,0.08);
             border-radius: 20px;
-            padding: 40px;
+            padding: 36px;
             text-align: center;
         }
-        .wa-banner i {
-            font-size: 3rem;
-            color: #25d366;
-            margin-bottom: 16px;
-        }
-        .wa-banner h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-        .wa-banner p {
-            color: #888;
-            margin-bottom: 24px;
-        }
+        .wa-banner i.fa-whatsapp { font-size: 2.8rem; color: #25d366; margin-bottom: 14px; }
+        .wa-banner h3 { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; margin-bottom: 6px; }
+        .wa-banner p { color: #888; margin-bottom: 20px; font-size: 0.9rem; }
         .wa-banner .wa-btn {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 16px 36px;
+            gap: 10px;
+            padding: 14px 32px;
             background: #25d366;
             border: none;
             border-radius: 50px;
             color: #fff;
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-decoration: none;
             transition: all 0.3s;
         }
         .wa-banner .wa-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(37,211,102,0.3);
+            box-shadow: 0 10px 40px rgba(37,211,102,0.25);
         }
 
         /* ===== FOOTER ===== */
         footer {
             position: relative;
             z-index: 1;
-            padding: 40px 20px;
+            padding: 36px 20px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.03);
+            border-top: 1px solid rgba(255,255,255,0.02);
         }
         footer p {
-            color: #444;
+            color: #333;
             font-family: 'Rajdhani', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
         }
-        footer p a {
-            color: #f7c948;
-            text-decoration: none;
+        footer p a { color: #f7c948; text-decoration: none; }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99999;
+            padding: 14px 22px;
+            background: #12121e;
+            border: 1px solid rgba(247,201,72,0.12);
+            border-radius: 14px;
+            color: #fff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            transform: translateY(80px);
+            opacity: 0;
+            transition: all 0.4s;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 360px;
         }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast i { font-size: 1.1rem; }
+        .toast.success i { color: #22c55e; }
+        .toast.error i { color: #ef4444; }
+        .toast.info i { color: #f7c948; }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .navbar { padding: 14px 20px; }
+            .navbar { padding: 12px 16px; }
             .nav-links { display: none; }
             .hamburger { display: flex; }
             .nav-links.open {
                 display: flex;
                 position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
+                top: 100%; left: 0; width: 100%;
                 flex-direction: column;
                 background: rgba(10,10,18,0.98);
                 padding: 20px;
-                border-bottom: 1px solid rgba(247,201,72,0.1);
-                gap: 16px;
+                border-bottom: 1px solid rgba(247,201,72,0.08);
+                gap: 14px;
             }
-            .hero h1 { font-size: clamp(2rem, 10vw, 3.5rem); }
-            .hero-stats { flex-wrap: wrap; gap: 24px; }
-            section { padding: 60px 16px; }
-            .quiz-modal { padding: 24px; }
+            .hero h1 { font-size: clamp(1.8rem, 10vw, 3rem); }
+            .hero-stats { flex-wrap: wrap; gap: 20px; }
+            section { padding: 60px 14px; }
+            .hub-tabs { gap: 4px; padding: 4px; }
+            .hub-tab { padding: 10px 14px; font-size: 0.75rem; }
+            .quiz-modal { padding: 20px; }
             .premium-input-group { flex-direction: column; }
-            .wa-banner { padding: 24px; }
+            .lb-header, .lb-row { grid-template-columns: 40px 1fr 60px 60px; padding: 12px 14px; font-size: 0.75rem; }
+            .premium-card.featured { transform: scale(1); }
         }
 
-        /* ===== GLOW TEXT EFFECT ===== */
-        .glow-text {
-            text-shadow: 0 0 40px rgba(247,201,72,0.1);
-        }
-
-        /* ===== TOAST ===== */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 99999;
-            padding: 16px 24px;
-            background: #12121e;
-            border: 1px solid rgba(247,201,72,0.15);
-            border-radius: 14px;
-            color: #fff;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 0.9rem;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.4s;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        .toast i { font-size: 1.2rem; }
-        .toast.success i { color: #22c55e; }
-        .toast.error i { color: #ef4444; }
-        .toast.info i { color: #f7c948; }
+        .glow-text { text-shadow: 0 0 40px rgba(247,201,72,0.08); }
     </style>
 </head>
 <body>
 
-<!-- ===== PRELOADER ===== -->
+<!-- PRELOADER -->
 <div id="preloader">
     <div class="loader-zeus">ZEUS</div>
-    <div class="loader-sub">INTELLIGENCE QUOTIENT</div>
-    <div class="loader-bar">
-        <div class="loader-bar-fill"></div>
-    </div>
+    <div class="loader-sub">Intelligence Hub</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
 
-<!-- ===== PARTICLES ===== -->
+<!-- PARTICLES -->
 <canvas id="particles-canvas"></canvas>
 
-<!-- ===== AMBIENT GLOW ===== -->
+<!-- AMBIENT GLOWS -->
 <div class="ambient-glow g1"></div>
 <div class="ambient-glow g2"></div>
 <div class="ambient-glow g3"></div>
+<div class="ambient-glow g4"></div>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
     <a href="#" class="nav-logo">
         <div class="nav-logo-icon">Z</div>
-        <div class="nav-logo-text">ZEUS <span>IQ</span></div>
+        <div class="nav-logo-text">ZEUS <span>HUB</span></div>
     </a>
     <ul class="nav-links" id="navLinks">
-        <li><a href="#tests" onclick="closeNav()">Tests</a></li>
-        <li><a href="#premium" onclick="closeNav()">Premium</a></li>
-        <li><a href="#contact" onclick="closeNav()">Contact</a></li>
-        <li><button class="nav-premium-btn" onclick="closeNav();document.getElementById('premium').scrollIntoView({behavior:'smooth'})"><i class="fas fa-crown"></i> Unlock Premium</button></li>
+        <li><a href="#" class="active" onclick="switchTab('dashboard',this);closeNav();return false;"><i class="fas fa-chart-pie"></i> Dashboard</a></li>
+        <li><a href="#" onclick="switchTab('tests',this);closeNav();return false;"><i class="fas fa-brain"></i> IQ Tests</a></li>
+        <li><a href="#" onclick="switchTab('leaderboard',this);closeNav();return false;"><i class="fas fa-trophy"></i> Leaderboard</a></li>
+        <li><a href="#" onclick="switchTab('tools',this);closeNav();return false;"><i class="fas fa-tools"></i> Tools</a></li>
+        <li><a href="#" onclick="switchTab('marketplace',this);closeNav();return false;"><i class="fas fa-store"></i> Market</a></li>
+        <li><a href="#" onclick="switchTab('premium',this);closeNav();return false;"><i class="fas fa-crown"></i> Premium</a></li>
+        <li><a href="#" onclick="switchTab('contact',this);closeNav();return false;"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
+    <button class="nav-premium-btn" onclick="switchTab('premium');closeNav();"><i class="fas fa-crown"></i> Unlock</button>
     <div class="hamburger" id="hamburger" onclick="toggleNav()">
         <span></span><span></span><span></span>
     </div>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero" id="hero">
-    <div class="hero-badge"><i class="fas fa-bolt"></i> The Ultimate Intelligence Challenge</div>
+    <div class="hero-badge"><i class="fas fa-bolt"></i> The Ultimate Intelligence Ecosystem</div>
     <h1 class="glow-text">
-        <span class="gold">UNLEASH</span><br>
-        <span class="white">YOUR <span class="gold">IQ</span></span>
+        <span class="gold">ZEUS</span><br>
+        <span class="white">INTELLIGENCE <span class="gold">HUB</span></span>
     </h1>
-    <p>Challenge yourself across Football IQ, Gaming IQ, General Knowledge & more. 5 seconds per question. Prove you're a legend.</p>
+    <p>IQ Tests · Analytics · Leaderboards · Tools · Marketplace · Premium Features<br>All in one place. Built by Zeus.</p>
     <div class="hero-actions">
-        <button class="btn-primary" onclick="document.getElementById('tests').scrollIntoView({behavior:'smooth'})"><i class="fas fa-brain"></i> Start a Test</button>
-        <button class="btn-secondary" onclick="document.getElementById('premium').scrollIntoView({behavior:'smooth'})"><i class="fas fa-crown"></i> Go Premium</button>
+        <button class="btn-primary" onclick="switchTab('tests')"><i class="fas fa-brain"></i> Start IQ Test</button>
+        <button class="btn-secondary" onclick="switchTab('dashboard')"><i class="fas fa-chart-pie"></i> My Dashboard</button>
     </div>
     <div class="hero-stats">
-        <div class="hero-stat">
-            <div class="num">12+</div>
-            <div class="label">IQ Tests</div>
-        </div>
-        <div class="hero-stat">
-            <div class="num">5s</div>
-            <div class="label">Per Question</div>
-        </div>
-        <div class="hero-stat">
-            <div class="num">∞</div>
-            <div class="label">Challenges</div>
-        </div>
+        <div class="hero-stat"><div class="num">12+</div><div class="label">IQ Tests</div></div>
+        <div class="hero-stat"><div class="num">5s</div><div class="label">Per Question</div></div>
+        <div class="hero-stat"><div class="num">∞</div><div class="label">Possibilities</div></div>
+        <div class="hero-stat"><div class="num" id="hubUsers">2.4K</div><div class="label">Active Users</div></div>
     </div>
     <div class="scroll-indicator">
         <div class="mouse"></div>
@@ -1129,107 +1337,179 @@
     </div>
 </section>
 
-<!-- ===== CATEGORIES / TESTS ===== -->
-<section class="categories" id="tests">
-    <div class="section-label">Choose Your Battle</div>
-    <h2 class="section-title glow-text">IQ <span style="color:#f7c948;">Test Categories</span></h2>
-    <p class="section-sub">Pick a category and prove your dominance. Each test has 10 rapid-fire questions with 5 seconds each.</p>
+<!-- HUB SECTION -->
+<section id="hubSection">
+    <div class="section-label">Explore the Hub</div>
+    <h2 class="section-title glow-text">Your <span style="color:#f7c948;">Command Center</span></h2>
+    <p class="section-sub">Navigate through all features. IQ tests, stats, tools, marketplace, and premium upgrades.</p>
 
-    <div class="categories-grid" id="categoriesGrid">
-        <!-- Cards injected by JS -->
+    <!-- TABS -->
+    <div class="hub-tabs">
+        <button class="hub-tab active" data-tab="dashboard" onclick="switchTab('dashboard')"><i class="fas fa-chart-pie"></i> Dashboard</button>
+        <button class="hub-tab" data-tab="tests" onclick="switchTab('tests')"><i class="fas fa-brain"></i> IQ Tests</button>
+        <button class="hub-tab" data-tab="leaderboard" onclick="switchTab('leaderboard')"><i class="fas fa-trophy"></i> Leaderboard</button>
+        <button class="hub-tab" data-tab="tools" onclick="switchTab('tools')"><i class="fas fa-tools"></i> Tools</button>
+        <button class="hub-tab" data-tab="marketplace" onclick="switchTab('marketplace')"><i class="fas fa-store"></i> Market</button>
+        <button class="hub-tab" data-tab="premium" onclick="switchTab('premium')"><i class="fas fa-crown"></i> Premium</button>
+        <button class="hub-tab" data-tab="contact" onclick="switchTab('contact')"><i class="fas fa-envelope"></i> Contact</button>
+    </div>
+
+    <!-- TAB: DASHBOARD -->
+    <div class="tab-content active" id="tab-dashboard">
+        <div class="dashboard-grid">
+            <div class="dash-card">
+                <div class="dc-icon"><i class="fas fa-brain"></i></div>
+                <div class="dc-num" id="dashTests">0</div>
+                <div class="dc-label">Tests Taken</div>
+            </div>
+            <div class="dash-card">
+                <div class="dc-icon"><i class="fas fa-star"></i></div>
+                <div class="dc-num" id="dashAvg">0%</div>
+                <div class="dc-label">Avg Score</div>
+            </div>
+            <div class="dash-card">
+                <div class="dc-icon"><i class="fas fa-bolt"></i></div>
+                <div class="dc-num" id="dashCorrect">0</div>
+                <div class="dc-label">Correct Answers</div>
+            </div>
+            <div class="dash-card">
+                <div class="dc-icon"><i class="fas fa-trophy"></i></div>
+                <div class="dc-num" id="dashRank">—</div>
+                <div class="dc-label">Global Rank</div>
+            </div>
+        </div>
+
+        <div class="recent-activity" id="recentActivity">
+            <h3><i class="fas fa-history"></i> Recent Activity</h3>
+            <div id="activityList">
+                <div class="empty-dash">
+                    <i class="fas fa-inbox"></i>
+                    <p>No activity yet. Take your first IQ test!</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="premiumStatusBanner" style="max-width:800px;margin:20px auto 0;text-align:center;">
+            <div style="background:rgba(247,201,72,0.04);border:1px solid rgba(247,201,72,0.08);border-radius:12px;padding:16px;">
+                <p id="premStatusText" style="color:#888;font-size:0.9rem;"><i class="fas fa-lock" style="color:#ef4444;"></i> Free Tier · <a href="#" onclick="switchTab('premium');return false;" style="color:#f7c948;">Upgrade to Premium</a> for full access</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB: IQ TESTS -->
+    <div class="tab-content" id="tab-tests">
+        <p class="section-sub">Choose your challenge. Each test has 10 rapid-fire questions with 5 seconds per answer.</p>
+        <div class="categories-grid" id="categoriesGrid"></div>
+    </div>
+
+    <!-- TAB: LEADERBOARD -->
+    <div class="tab-content" id="tab-leaderboard">
+        <p class="section-sub">Top performers on Zeus IQ. Compete for the #1 spot.</p>
+        <div class="leaderboard-container" id="leaderboardContainer">
+            <div class="lb-header">
+                <span>Rank</span>
+                <span>Player</span>
+                <span>High Score</span>
+                <span>Average</span>
+            </div>
+            <div id="leaderboardRows"></div>
+        </div>
+    </div>
+
+    <!-- TAB: TOOLS -->
+    <div class="tab-content" id="tab-tools">
+        <p class="section-sub">Free & premium tools to sharpen your skills and boost your intelligence.</p>
+        <div class="tools-grid" id="toolsGrid"></div>
+    </div>
+
+    <!-- TAB: MARKETPLACE -->
+    <div class="tab-content" id="tab-marketplace">
+        <p class="section-sub">Premium digital products & resources from Zeus.</p>
+        <div class="marketplace-grid" id="marketplaceGrid"></div>
+    </div>
+
+    <!-- TAB: PREMIUM -->
+    <div class="tab-content" id="tab-premium">
+        <div class="premium-grid">
+            <div class="premium-card">
+                <h3>Free</h3>
+                <div class="price">$0 <span>/ forever</span></div>
+                <ul>
+                    <li><i class="fas fa-check"></i> 3 Free IQ Tests</li>
+                    <li><i class="fas fa-check"></i> Basic Dashboard</li>
+                    <li><i class="fas fa-check"></i> 1 Free Tool</li>
+                    <li><i class="fas fa-times" style="color:#555;"></i> Advanced Analytics</li>
+                    <li><i class="fas fa-times" style="color:#555;"></i> All Tools & Tests</li>
+                    <li><i class="fas fa-times" style="color:#555;"></i> Ad-Free</li>
+                </ul>
+            </div>
+            <div class="premium-card featured">
+                <div class="prem-badge"><i class="fas fa-crown"></i> MOST POPULAR</div>
+                <h3>Premium</h3>
+                <div class="price">$1 <span>/ once</span></div>
+                <ul>
+                    <li><i class="fas fa-check"></i> All 12+ IQ Tests</li>
+                    <li><i class="fas fa-check"></i> Full Analytics Dashboard</li>
+                    <li><i class="fas fa-check"></i> All Premium Tools</li>
+                    <li><i class="fas fa-check"></i> Leaderboard Access</li>
+                    <li><i class="fas fa-check"></i> Premium Badge</li>
+                    <li><i class="fas fa-check"></i> Marketplace Discounts</li>
+                    <li><i class="fas fa-check"></i> Ad-Free Experience</li>
+                </ul>
+            </div>
+            <div class="premium-card">
+                <h3>Legend</h3>
+                <div class="price">$5 <span>/ once</span></div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Everything in Premium</li>
+                    <li><i class="fas fa-check"></i> Custom Profile Frame</li>
+                    <li><i class="fas fa-check"></i> Legend Rank Badge</li>
+                    <li><i class="fas fa-check"></i> Early Access to Features</li>
+                    <li><i class="fas fa-check"></i> Direct WhatsApp Priority</li>
+                    <li><i class="fas fa-check"></i> Lifetime Updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="premium-code-section">
+            <h3><i class="fas fa-key" style="color:#f7c948;"></i> Unlock with Code</h3>
+            <p>Enter your premium code or contact Zeus on WhatsApp to get yours.</p>
+            <div class="premium-input-group">
+                <input type="text" id="premiumCodeInput" placeholder="Enter Code" maxlength="10" autocomplete="off">
+                <button onclick="redeemPremiumCode()"><i class="fas fa-unlock"></i> Unlock</button>
+            </div>
+            <div class="premium-code-msg" id="premiumCodeMsg"></div>
+        </div>
+    </div>
+
+    <!-- TAB: CONTACT -->
+    <div class="tab-content" id="tab-contact">
+        <div class="wa-banner">
+            <i class="fab fa-whatsapp"></i>
+            <h3>Chat with Zeus</h3>
+            <p>Contact the owner directly on WhatsApp for premium codes, support, or custom requests.</p>
+            <a href="https://wa.me/2349066760078?text=Hey%20Zeus!%20I%20want%20to%20unlock%20ZEUS%20HUB%20Premium%20%F0%9F%91%91" target="_blank" class="wa-btn">
+                <i class="fab fa-whatsapp"></i> Message Zeus
+            </a>
+            <p style="margin-top:14px;font-size:0.75rem;color:#555;">Owner: Zeus · +234 906 676 0078</p>
+        </div>
     </div>
 </section>
 
-<!-- ===== QUIZ MODAL ===== -->
+<!-- QUIZ MODAL -->
 <div class="quiz-modal-overlay" id="quizModal">
     <div class="quiz-modal">
         <button class="quiz-modal-close" onclick="closeQuizModal()"><i class="fas fa-times"></i></button>
-        <div id="quizContent">
-            <!-- Quiz UI injected by JS -->
-        </div>
+        <div id="quizContent"></div>
     </div>
 </div>
 
-<!-- ===== PREMIUM ===== -->
-<section class="premium-section" id="premium">
-    <div class="section-label">Upgrade</div>
-    <h2 class="section-title glow-text">Go <span style="color:#f7c948;">Premium</span></h2>
-    <p class="section-sub">Unlock the full Zeus IQ experience. Advanced analytics, all categories, exclusive tests & more.</p>
-
-    <div class="premium-grid">
-        <div class="premium-card">
-            <h3>Free</h3>
-            <div class="price">$0 <span>/ forever</span></div>
-            <ul>
-                <li><i class="fas fa-check"></i> 3 Free Categories</li>
-                <li><i class="fas fa-check"></i> 5 Questions per Test</li>
-                <li><i class="fas fa-check"></i> Basic Score Report</li>
-                <li><i class="fas fa-times" style="color:#555;"></i> Advanced Analytics</li>
-                <li><i class="fas fa-times" style="color:#555;"></i> Premium Categories</li>
-                <li><i class="fas fa-times" style="color:#555;"></i> Ad-Free</li>
-            </ul>
-        </div>
-        <div class="premium-card featured">
-            <div class="prem-badge"><i class="fas fa-crown"></i> BEST VALUE</div>
-            <h3>Premium</h3>
-            <div class="price">$1 <span>/ once</span></div>
-            <ul>
-                <li><i class="fas fa-check"></i> All 12+ Categories</li>
-                <li><i class="fas fa-check"></i> 10 Questions per Test</li>
-                <li><i class="fas fa-check"></i> Detailed Analytics</li>
-                <li><i class="fas fa-check"></i> Leaderboard Access</li>
-                <li><i class="fas fa-check"></i> Exclusive Premium Badge</li>
-                <li><i class="fas fa-check"></i> Ad-Free Experience</li>
-                <li><i class="fas fa-check"></i> Future Updates Included</li>
-            </ul>
-        </div>
-        <div class="premium-card">
-            <h3>Legend</h3>
-            <div class="price">$5 <span>/ once</span></div>
-            <ul>
-                <li><i class="fas fa-check"></i> Everything in Premium</li>
-                <li><i class="fas fa-check"></i> Custom Avatar Frame</li>
-                <li><i class="fas fa-check"></i> Legend Role on Leaderboard</li>
-                <li><i class="fas fa-check"></i> Early Access to New Tests</li>
-                <li><i class="fas fa-check"></i> Direct WhatsApp Priority</li>
-                <li><i class="fas fa-check"></i> Lifetime Updates</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="premium-code-section">
-        <h3><i class="fas fa-key" style="color:#f7c948;"></i> Unlock Premium</h3>
-        <p>Enter your premium code below or contact Zeus on WhatsApp to get yours.</p>
-        <div class="premium-input-group">
-            <input type="text" id="premiumCodeInput" placeholder="Enter Code" maxlength="10" autocomplete="off">
-            <button onclick="redeemPremiumCode()"><i class="fas fa-unlock"></i> Unlock</button>
-        </div>
-        <div class="premium-code-msg" id="premiumCodeMsg"></div>
-    </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section class="contact-section" id="contact">
-    <div class="section-label">Get in Touch</div>
-    <h2 class="section-title glow-text">Contact <span style="color:#f7c948;">Zeus</span></h2>
-    <p class="section-sub">Have questions? Want a custom test? Reach out directly on WhatsApp.</p>
-    <div class="wa-banner">
-        <i class="fab fa-whatsapp"></i>
-        <h3>Chat with the Owner</h3>
-        <p>Zeus personally handles all inquiries. Tap the button below to start a conversation on WhatsApp.</p>
-        <a href="https://wa.me/2349066760078?text=Hey%20Zeus!%20I%20want%20to%20unlock%20Zeus%20IQ%20Premium%20%F0%9F%91%91" target="_blank" class="wa-btn">
-            <i class="fab fa-whatsapp"></i> Message Zeus on WhatsApp
-        </a>
-        <p style="margin-top:16px;font-size:0.8rem;color:#555;">+234 906 676 0078</p>
-    </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 <a href="#">ZEUS IQ</a> · Built by Zeus · All rights reserved</p>
+    <p>© 2026 <a href="#">ZEUS HUB</a> · Built by Zeus · Intelligence Ecosystem</p>
 </footer>
 
-<!-- ===== TOAST ===== -->
+<!-- TOAST -->
 <div class="toast" id="toast">
     <i class="fas fa-info-circle"></i>
     <span id="toastMsg">Hello!</span>
@@ -1237,202 +1517,12 @@
 
 <script>
     // ========================
-    // DATA
+    // STATE
     // ========================
-    const categories = [
-        {
-            id: 'football',
-            icon: 'fas fa-futbol',
-            name: 'Football IQ',
-            desc: 'Tactics, history, legends & current stars. Do you really know the beautiful game?',
-            premium: false,
-            questions: [
-                { q: 'Which country has won the most FIFA World Cups?', options: ['Germany', 'Brazil', 'Italy', 'Argentina'], answer: 1 },
-                { q: 'Who is known as the "King of Football"?', options: ['Messi', 'Pele', 'Maradona', 'Ronaldo'], answer: 1 },
-                { q: 'Which club has won the most UEFA Champions League titles?', options: ['Barcelona', 'AC Milan', 'Liverpool', 'Real Madrid'], answer: 3 },
-                { q: 'How many World Cups has Argentina won?', options: ['2', '3', '4', '1'], answer: 1 },
-                { q: 'Which stadium is known as "The Theatre of Dreams"?', options: ['Old Trafford', 'Camp Nou', 'Anfield', 'Santiago Bernabeu'], answer: 0 },
-                { q: 'Who scored the "Hand of God" goal?', options: ['Pele', 'Maradona', 'Zidane', 'Ronaldo'], answer: 1 },
-                { q: 'Which country hosted the 2022 FIFA World Cup?', options: ['Qatar', 'Russia', 'Brazil', 'UAE'], answer: 0 },
-                { q: 'Who has won the most Ballon d\'Or awards?', options: ['Ronaldo', 'Messi', 'Mbappe', 'Zidane'], answer: 1 },
-                { q: 'What is the original name of the FIFA World Cup trophy?', options: ['Gold Cup', 'World Trophy', 'Jules Rimet Trophy', 'Victory Cup'], answer: 2 },
-                { q: 'Which Premier League club has the most titles?', options: ['Liverpool', 'Chelsea', 'Arsenal', 'Manchester United'], answer: 3 }
-            ]
-        },
-        {
-            id: 'gaming',
-            icon: 'fas fa-gamepad',
-            name: 'Gaming IQ',
-            desc: 'From retro classics to modern esports. How well do you know gaming culture?',
-            premium: false,
-            questions: [
-                { q: 'Which game is considered the best-selling video game of all time?', options: ['GTA V', 'Minecraft', 'Tetris', 'Wii Sports'], answer: 1 },
-                { q: 'What year was the original PlayStation released?', options: ['1994', '1995', '1996', '1993'], answer: 0 },
-                { q: 'Which company developed "The Legend of Zelda"?', options: ['Sony', 'Nintendo', 'Sega', 'Capcom'], answer: 1 },
-                { q: 'In Fortnite, what is the name of the in-game currency?', options: ['V-Bucks', 'Coins', 'Gems', 'Tokens'], answer: 0 },
-                { q: 'What does "FPS" stand for in gaming?', options: ['Fast Player Score', 'First-Person Shooter', 'Frames Per Second', 'Both B & C'], answer: 3 },
-                { q: 'Which game features the character "Master Chief"?', options: ['Halo', 'Call of Duty', 'Destiny', 'Gears of War'], answer: 0 },
-                { q: 'What is the highest rank in Valorant?', options: ['Immortal', 'Radiant', 'Diamond', 'Ascendant'], answer: 1 },
-                { q: 'Which of these is a battle royale game?', options: ['Stardew Valley', 'PUBG', 'Minecraft', 'SimCity'], answer: 1 },
-                { q: 'Who created Mario?', options: ['Satoru Iwata', 'Shigeru Miyamoto', 'Hideo Kojima', 'Reggie Fils-Aimé'], answer: 1 },
-                { q: 'In chess (the classic game), which piece can move diagonally?', options: ['Rook', 'Knight', 'Bishop', 'Pawn'], answer: 2 }
-            ]
-        },
-        {
-            id: 'general',
-            icon: 'fas fa-globe',
-            name: 'General Knowledge',
-            desc: 'Science, history, geography & pop culture. The ultimate IQ challenge.',
-            premium: false,
-            questions: [
-                { q: 'What is the capital of Japan?', options: ['Seoul', 'Beijing', 'Tokyo', 'Bangkok'], answer: 2 },
-                { q: 'How many bones are in the adult human body?', options: ['206', '196', '216', '186'], answer: 0 },
-                { q: 'Which planet is known as the Red Planet?', options: ['Venus', 'Jupiter', 'Saturn', 'Mars'], answer: 3 },
-                { q: 'What is the chemical symbol for Gold?', options: ['Go', 'Gd', 'Au', 'Ag'], answer: 2 },
-                { q: 'Who painted the Mona Lisa?', options: ['Raphael', 'Da Vinci', 'Michelangelo', 'Van Gogh'], answer: 1 },
-                { q: 'In which year did the Titanic sink?', options: ['1910', '1911', '1912', '1913'], answer: 2 },
-                { q: 'What is the tallest mountain in the world?', options: ['K2', 'Everest', 'Kilimanjaro', 'Denali'], answer: 1 },
-                { q: 'Which animal is known as the King of the Jungle?', options: ['Tiger', 'Lion', 'Elephant', 'Gorilla'], answer: 1 },
-                { q: 'What is the smallest country in the world?', options: ['Monaco', 'Vatican City', 'San Marino', 'Liechtenstein'], answer: 1 },
-                { q: 'How many continents are there?', options: ['5', '6', '7', '8'], answer: 2 }
-            ]
-        },
-        {
-            id: 'music',
-            icon: 'fas fa-music',
-            name: 'Music IQ',
-            desc: 'Artists, albums, genres & iconic moments. Test your music mastery.',
-            premium: true,
-            questions: [
-                { q: 'Which artist is known as the "King of Pop"?', options: ['Prince', 'Elvis', 'Michael Jackson', 'Freddie Mercury'], answer: 2 },
-                { q: 'What band performed "Bohemian Rhapsody"?', options: ['The Beatles', 'Queen', 'Led Zeppelin', 'Pink Floyd'], answer: 1 },
-                { q: 'Which instrument has 88 keys?', options: ['Organ', 'Piano', 'Harpsichord', 'Synthesizer'], answer: 1 },
-                { q: 'Who won the Grammy for Best New Artist in 2024?', options: ['Olivia Rodrigo', 'Victoria Monét', 'Billie Eilish', 'Dua Lipa'], answer: 1 },
-                { q: 'What genre is "Reggaeton"?', options: ['Rock', 'Jazz', 'Latin Urban', 'Classical'], answer: 2 },
-                { q: 'Which album is the best-selling of all time?', options: ['Thriller', 'Back in Black', 'The Dark Side of the Moon', 'Rumours'], answer: 0 },
-                { q: 'Who sang "Rolling in the Deep"?', options: ['Beyoncé', 'Adele', 'Rihanna', 'Amy Winehouse'], answer: 1 },
-                { q: 'What year did Woodstock take place?', options: ['1967', '1968', '1969', '1970'], answer: 2 },
-                { q: 'Which country does K-Pop originate from?', options: ['China', 'Japan', 'South Korea', 'Thailand'], answer: 2 },
-                { q: 'What is the highest female vocal range?', options: ['Alto', 'Mezzo-Soprano', 'Soprano', 'Contralto'], answer: 2 }
-            ]
-        },
-        {
-            id: 'science',
-            icon: 'fas fa-flask',
-            name: 'Science IQ',
-            desc: 'Physics, chemistry, biology & beyond. For the curious minds.',
-            premium: true,
-            questions: [
-                { q: 'What is the speed of light in vacuum (km/s)?', options: ['~300,000', '~150,000', '~500,000', '~1,000,000'], answer: 0 },
-                { q: 'Which element has the atomic number 1?', options: ['Helium', 'Oxygen', 'Hydrogen', 'Carbon'], answer: 2 },
-                { q: 'What is the powerhouse of the cell?', options: ['Nucleus', 'Mitochondria', 'Ribosome', 'Golgi'], answer: 1 },
-                { q: 'What gas do plants absorb from the atmosphere?', options: ['Oxygen', 'Nitrogen', 'Carbon Dioxide', 'Argon'], answer: 2 },
-                { q: 'Which force keeps us on the ground?', options: ['Magnetic', 'Gravity', 'Friction', 'Inertia'], answer: 1 },
-                { q: 'What is the chemical formula of water?', options: ['CO2', 'H2O', 'NaCl', 'O2'], answer: 1 },
-                { q: 'Which planet has the most moons?', options: ['Jupiter', 'Saturn', 'Uranus', 'Neptune'], answer: 1 },
-                { q: 'What is the largest organ in the human body?', options: ['Liver', 'Brain', 'Skin', 'Heart'], answer: 2 },
-                { q: 'Which gas makes up most of the Earth\'s atmosphere?', options: ['Oxygen', 'Nitrogen', 'CO2', 'Argon'], answer: 1 },
-                { q: 'What temperature is absolute zero in Celsius?', options: ['-273.15', '-200', '-250', '-300'], answer: 0 }
-            ]
-        },
-        {
-            id: 'riddles',
-            icon: 'fas fa-puzzle-piece',
-            name: 'Riddle IQ',
-            desc: 'Tricky puzzles and brain teasers. Can you solve them all in 5 seconds?',
-            premium: true,
-            questions: [
-                { q: 'What has keys but can\'t open locks?', options: ['A map', 'A piano', 'A computer', 'A book'], answer: 1 },
-                { q: 'What gets wetter the more it dries?', options: ['A towel', 'A sponge', 'A mop', 'Rain'], answer: 0 },
-                { q: 'I speak without a mouth and hear without ears. What am I?', options: ['A echo', 'A radio', 'An echo', 'Wind'], answer: 2 },
-                { q: 'What can travel around the world while staying in a corner?', options: ['A stamp', 'A letter', 'A plane', 'Thought'], answer: 0 },
-                { q: 'What is full of holes but still holds water?', options: ['A net', 'A sponge', 'A sieve', 'A bucket'], answer: 1 },
-                { q: 'What has a head and a tail but no body?', options: ['A coin', 'A snake', 'A matchstick', 'A needle'], answer: 0 },
-                { q: 'What can you break even if you never pick it up?', options: ['Glass', 'A promise', 'A stick', 'Ice'], answer: 1 },
-                { q: 'What begins with T, ends with T, and has T in it?', options: ['Teapot', 'Tent', 'Tattoo', 'Table'], answer: 0 },
-                { q: 'What runs all around a backyard yet never moves?', options: ['A fence', 'A tree', 'A path', 'A shadow'], answer: 0 },
-                { q: 'What has many teeth but can\'t bite?', options: ['A comb', 'A saw', 'A zipper', 'A fork'], answer: 0 }
-            ]
-        },
-        {
-            id: 'history',
-            icon: 'fas fa-landmark',
-            name: 'History IQ',
-            desc: 'Empires, revolutions, and world-changing events. Know your past.',
-            premium: true,
-            questions: [
-                { q: 'In which year did World War II end?', options: ['1944', '1945', '1946', '1947'], answer: 1 },
-                { q: 'Who was the first President of the United States?', options: ['Adams', 'Jefferson', 'Washington', 'Lincoln'], answer: 2 },
-                { q: 'Which ancient wonder was located in Babylon?', options: ['Colossus', 'Hanging Gardens', 'Great Pyramid', 'Mausoleum'], answer: 1 },
-                { q: 'What empire was ruled by Genghis Khan?', options: ['Ottoman', 'Roman', 'Mongol', 'Persian'], answer: 2 },
-                { q: 'Which ship brought the Pilgrims to America in 1620?', options: ['Santa Maria', 'Mayflower', 'Beagle', 'Victoria'], answer: 1 },
-                { q: 'What year did the Berlin Wall fall?', options: ['1987', '1988', '1989', '1990'], answer: 2 },
-                { q: 'Who discovered penicillin?', options: ['Pasteur', 'Fleming', 'Koch', 'Salk'], answer: 1 },
-                { q: 'Which civilization built Machu Picchu?', options: ['Aztec', 'Maya', 'Inca', 'Olmec'], answer: 2 },
-                { q: 'What was the longest war in history?', options: ['100 Years War', 'Thirty Years War', 'Cold War', 'Peloponnesian War'], answer: 0 },
-                { q: 'Who was the last pharaoh of Egypt?', options: ['Nefertiti', 'Cleopatra', 'Hatshepsut', 'Ramesses'], answer: 1 }
-            ]
-        },
-        {
-            id: 'movies',
-            icon: 'fas fa-film',
-            name: 'Movie IQ',
-            desc: 'From box office hits to cult classics. How well do you know cinema?',
-            premium: true,
-            questions: [
-                { q: 'Which movie won the first ever Academy Award for Best Picture?', options: ['Wings', 'Sunrise', 'The Jazz Singer', 'Metropolis'], answer: 0 },
-                { q: 'Who directed "Pulp Fiction"?', options: ['Spielberg', 'Tarantino', 'Scorsese', 'Fincher'], answer: 1 },
-                { q: 'Which is the highest-grossing film of all time (unadjusted)?', options: ['Avengers: Endgame', 'Avatar', 'Titanic', 'Star Wars'], answer: 1 },
-                { q: 'What year was the first "Star Wars" movie released?', options: ['1975', '1976', '1977', '1978'], answer: 2 },
-                { q: 'Who played the Joker in "The Dark Knight"?', options: ['Ledger', 'Phoenix', 'Nicholson', 'Leto'], answer: 0 },
-                { q: 'Which animated film features a character named "Simba"?', options: ['Bambi', 'The Lion King', 'Tarzan', 'Brother Bear'], answer: 1 },
-                { q: 'What is the famous line from "The Terminator"?', options: ['Hasta la vista', 'I\'ll be back', 'Come with me', 'Get out'], answer: 1 },
-                { q: 'Which country produces "Bollywood" films?', options: ['Pakistan', 'India', 'Bangladesh', 'Sri Lanka'], answer: 1 },
-                { q: 'Who directed "Inception"?', options: ['Nolan', 'Villeneuve', 'Spielberg', 'Cameron'], answer: 0 },
-                { q: 'Which movie features the line "You can\'t handle the truth!"?', options: ['A Few Good Men', 'The Verdict', '12 Angry Men', 'Witness'], answer: 0 }
-            ]
-        },
-        {
-            id: 'tech',
-            icon: 'fas fa-laptop-code',
-            name: 'Tech IQ',
-            desc: 'Programming, gadgets, startups & innovation. For the tech elite.',
-            premium: true,
-            questions: [
-                { q: 'What does "HTML" stand for?', options: ['HyperText Markup Language', 'High Tech Modern Language', 'HyperTransfer Markup Language', 'Home Tool Markup Language'], answer: 0 },
-                { q: 'Which company developed the Android operating system?', options: ['Apple', 'Microsoft', 'Google', 'Samsung'], answer: 2 },
-                { q: 'What programming language is used for iOS development?', options: ['Kotlin', 'Swift', 'Java', 'C#'], answer: 1 },
-                { q: 'What does "AI" stand for?', options: ['Automated Intelligence', 'Artificial Intelligence', 'Augmented Intelligence', 'Active Intelligence'], answer: 1 },
-                { q: 'Which social media platform was founded by Mark Zuckerberg?', options: ['Twitter', 'Instagram', 'Facebook', 'Snapchat'], answer: 2 },
-                { q: 'What does "CPU" stand for?', options: ['Central Processing Unit', 'Computer Personal Unit', 'Central Program Utility', 'Core Processing Unit'], answer: 0 },
-                { q: 'Which company makes the "PlayStation"?', options: ['Microsoft', 'Nintendo', 'Sony', 'Sega'], answer: 2 },
-                { q: 'What is the most popular programming language in 2025?', options: ['Python', 'Java', 'JavaScript', 'C++'], answer: 0 },
-                { q: 'What does "VPN" stand for?', options: ['Virtual Personal Network', 'Virtual Private Network', 'Verified Protocol Network', 'Visual Private Node'], answer: 1 },
-                { q: 'Which year was the first iPhone released?', options: ['2005', '2006', '2007', '2008'], answer: 2 }
-            ]
-        },
-        {
-            id: 'math',
-            icon: 'fas fa-calculator',
-            name: 'Math IQ',
-            desc: 'Numbers, patterns, and logical reasoning. For the sharpest minds.',
-            premium: true,
-            questions: [
-                { q: 'What is 15% of 200?', options: ['25', '30', '35', '40'], answer: 1 },
-                { q: 'What is the square root of 144?', options: ['10', '11', '12', '13'], answer: 2 },
-                { q: 'What is 7 x 8?', options: ['48', '56', '64', '72'], answer: 1 },
-                { q: 'What is the next prime number after 11?', options: ['13', '17', '19', '23'], answer: 0 },
-                { q: 'How many sides does a dodecagon have?', options: ['10', '12', '14', '16'], answer: 1 },
-                { q: 'What is 2^10?', options: ['512', '1024', '2048', '256'], answer: 1 },
-                { q: 'What is the value of Pi (π) to 2 decimal places?', options: ['3.14', '3.16', '3.12', '3.18'], answer: 0 },
-                { q: 'If a triangle has angles 90°, 45°, what is the third?', options: ['30°', '45°', '60°', '90°'], answer: 1 },
-                { q: 'What is 0.5 as a fraction in simplest form?', options: ['1/4', '1/3', '1/2', '2/3'], answer: 2 },
-                { q: 'How many zeros are in one million?', options: ['5', '6', '7', '8'], answer: 1 }
-            ]
-        }
-    ];
-
     let premiumUnlocked = localStorage.getItem('zeusPremium') === 'true';
+    let testHistory = JSON.parse(localStorage.getItem('zeusHistory') || '[]');
+    let leaderboard = JSON.parse(localStorage.getItem('zeusLeaderboard') || '[]');
+    let username = localStorage.getItem('zeusUsername') || 'Player';
 
     // ========================
     // PARTICLES
@@ -1453,9 +1543,9 @@
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
             this.size = Math.random() * 2.5 + 0.5;
-            this.speedX = (Math.random() - 0.5) * 0.5;
-            this.speedY = (Math.random() - 0.5) * 0.5;
-            this.opacity = Math.random() * 0.5 + 0.1;
+            this.speedX = (Math.random() - 0.5) * 0.4;
+            this.speedY = (Math.random() - 0.5) * 0.4;
+            this.opacity = Math.random() * 0.4 + 0.1;
             this.color = Math.random() > 0.7 ? '#f7c948' : '#ffffff';
         }
         update() {
@@ -1473,20 +1563,19 @@
         }
     }
 
-    for (let i = 0; i < 150; i++) particles.push(new Particle());
+    for (let i = 0; i < 120; i++) particles.push(new Particle());
 
     function animateParticles() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         for (let p of particles) { p.update(); p.draw(); }
-        // Draw connections
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 120) {
+                if (dist < 100) {
                     ctx.beginPath();
-                    ctx.strokeStyle = 'rgba(247,201,72,0.04)';
+                    ctx.strokeStyle = 'rgba(247,201,72,0.03)';
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
@@ -1503,9 +1592,7 @@
     // PRELOADER
     // ========================
     window.addEventListener('load', () => {
-        setTimeout(() => {
-            document.getElementById('preloader').classList.add('hidden');
-        }, 2200);
+        setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 2000);
     });
 
     // ========================
@@ -1524,38 +1611,193 @@
     });
 
     // ========================
-    // CATEGORIES
+    // TAB SYSTEM
     // ========================
-    const grid = document.getElementById('categoriesGrid');
+    function switchTab(tabName, el) {
+        // Hide all tabs
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.hub-tab').forEach(t => t.classList.remove('active'));
 
+        // Show target
+        document.getElementById('tab-' + tabName).classList.add('active');
+
+        // Update tab buttons
+        document.querySelectorAll(`.hub-tab[data-tab="${tabName}"]`).forEach(t => t.classList.add('active'));
+
+        // Update nav links
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+        if (el) el.classList.add('active');
+
+        // Scroll to hub section
+        document.getElementById('hubSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Refresh dynamic content
+        if (tabName === 'dashboard') updateDashboard();
+        if (tabName === 'leaderboard') renderLeaderboard();
+    }
+
+    // ========================
+    // IQ CATEGORIES
+    // ========================
+    const categories = [
+        { id:'football', icon:'fas fa-futbol', name:'Football IQ', desc:'Tactics, history, legends & current stars.', premium:false,
+          questions: [
+            { q:'Which country has won the most FIFA World Cups?', o:['Germany','Brazil','Italy','Argentina'], a:1 },
+            { q:'Who is known as the "King of Football"?', o:['Messi','Pele','Maradona','Ronaldo'], a:1 },
+            { q:'Which club has the most UCL titles?', o:['Barcelona','AC Milan','Liverpool','Real Madrid'], a:3 },
+            { q:'How many World Cups has Argentina won?', o:['2','3','4','1'], a:1 },
+            { q:'Which stadium is "The Theatre of Dreams"?', o:['Old Trafford','Camp Nou','Anfield','Bernabeu'], a:0 },
+            { q:'Who scored the "Hand of God" goal?', o:['Pele','Maradona','Zidane','Ronaldo'], a:1 },
+            { q:'Which country hosted the 2022 World Cup?', o:['Qatar','Russia','Brazil','UAE'], a:0 },
+            { q:'Who has won the most Ballon d\'Or awards?', o:['Ronaldo','Messi','Mbappe','Zidane'], a:1 },
+            { q:'What was the original World Cup trophy called?', o:['Gold Cup','World Trophy','Jules Rimet','Victory Cup'], a:2 },
+            { q:'Which Premier League club has the most titles?', o:['Liverpool','Chelsea','Arsenal','Man United'], a:3 }
+          ]},
+        { id:'gaming', icon:'fas fa-gamepad', name:'Gaming IQ', desc:'Retro classics to modern esports.', premium:false,
+          questions: [
+            { q:'Best-selling video game of all time?', o:['GTA V','Minecraft','Tetris','Wii Sports'], a:1 },
+            { q:'What year was the PlayStation released?', o:['1994','1995','1996','1993'], a:0 },
+            { q:'Who developed "The Legend of Zelda"?', o:['Sony','Nintendo','Sega','Capcom'], a:1 },
+            { q:'Fortnite in-game currency?', o:['V-Bucks','Coins','Gems','Tokens'], a:0 },
+            { q:'What does FPS stand for?', o:['Fast Player Score','First-Person Shooter','Frames Per Second','B & C'], a:3 },
+            { q:'Which game has "Master Chief"?', o:['Halo','Call of Duty','Destiny','Gears'], a:0 },
+            { q:'Highest rank in Valorant?', o:['Immortal','Radiant','Diamond','Ascendant'], a:1 },
+            { q:'Which is a battle royale game?', o:['Stardew Valley','PUBG','Minecraft','SimCity'], a:1 },
+            { q:'Who created Mario?', o:['Iwata','Miyamoto','Kojima','Fils-Aimé'], a:1 },
+            { q:'Which chess piece moves diagonally?', o:['Rook','Knight','Bishop','Pawn'], a:2 }
+          ]},
+        { id:'general', icon:'fas fa-globe', name:'General Knowledge', desc:'Science, history, geography & more.', premium:false,
+          questions: [
+            { q:'Capital of Japan?', o:['Seoul','Beijing','Tokyo','Bangkok'], a:2 },
+            { q:'Bones in the adult human body?', o:['206','196','216','186'], a:0 },
+            { q:'Which planet is the Red Planet?', o:['Venus','Jupiter','Saturn','Mars'], a:3 },
+            { q:'Chemical symbol for Gold?', o:['Go','Gd','Au','Ag'], a:2 },
+            { q:'Who painted the Mona Lisa?', o:['Raphael','Da Vinci','Michelangelo','Van Gogh'], a:1 },
+            { q:'When did the Titanic sink?', o:['1910','1911','1912','1913'], a:2 },
+            { q:'Tallest mountain in the world?', o:['K2','Everest','Kilimanjaro','Denali'], a:1 },
+            { q:'King of the Jungle?', o:['Tiger','Lion','Elephant','Gorilla'], a:1 },
+            { q:'Smallest country in the world?', o:['Monaco','Vatican City','San Marino','Liechtenstein'], a:1 },
+            { q:'How many continents?', o:['5','6','7','8'], a:2 }
+          ]},
+        { id:'music', icon:'fas fa-music', name:'Music IQ', desc:'Artists, albums, genres & iconic moments.', premium:true,
+          questions: [
+            { q:'"King of Pop"?', o:['Prince','Elvis','Michael Jackson','Freddie Mercury'], a:2 },
+            { q:'"Bohemian Rhapsody" band?', o:['Beatles','Queen','Led Zeppelin','Pink Floyd'], a:1 },
+            { q:'Instrument with 88 keys?', o:['Organ','Piano','Harpsichord','Synth'], a:1 },
+            { q:'Best-selling album of all time?', o:['Thriller','Back in Black','Dark Side','Rumours'], a:0 },
+            { q:'Who sang "Rolling in the Deep"?', o:['Beyoncé','Adele','Rihanna','Amy'], a:1 },
+            { q:'What year was Woodstock?', o:['1967','1968','1969','1970'], a:2 },
+            { q:'K-Pop originates from?', o:['China','Japan','South Korea','Thailand'], a:2 },
+            { q:'Highest female vocal range?', o:['Alto','Mezzo','Soprano','Contralto'], a:2 },
+            { q:'Which artist has most Grammys?', o:['Beyoncé','Stevie Wonder','Jay-Z','Quincy Jones'], a:0 },
+            { q:'What genre is "Blues"?', o:['Jazz','Rock','Folk','All of the above'], a:3 }
+          ]},
+        { id:'science', icon:'fas fa-flask', name:'Science IQ', desc:'Physics, chemistry, biology & beyond.', premium:true,
+          questions: [
+            { q:'Speed of light in vacuum (km/s)?', o:['~300,000','~150,000','~500,000','~1M'], a:0 },
+            { q:'Element with atomic number 1?', o:['Helium','Oxygen','Hydrogen','Carbon'], a:2 },
+            { q:'Powerhouse of the cell?', o:['Nucleus','Mitochondria','Ribosome','Golgi'], a:1 },
+            { q:'Gas plants absorb from atmosphere?', o:['Oxygen','Nitrogen','CO2','Argon'], a:2 },
+            { q:'Force keeping us on ground?', o:['Magnetic','Gravity','Friction','Inertia'], a:1 },
+            { q:'Chemical formula of water?', o:['CO2','H2O','NaCl','O2'], a:1 },
+            { q:'Planet with most moons?', o:['Jupiter','Saturn','Uranus','Neptune'], a:1 },
+            { q:'Largest human organ?', o:['Liver','Brain','Skin','Heart'], a:2 },
+            { q:'Most abundant gas in Earth\'s atmosphere?', o:['Oxygen','Nitrogen','CO2','Argon'], a:1 },
+            { q:'Absolute zero in Celsius?', o:['-273.15','-200','-250','-300'], a:0 }
+          ]},
+        { id:'riddles', icon:'fas fa-puzzle-piece', name:'Riddle IQ', desc:'Tricky puzzles & brain teasers.', premium:true,
+          questions: [
+            { q:'Has keys but can\'t open locks?', o:['Map','Piano','Computer','Book'], a:1 },
+            { q:'Gets wetter the more it dries?', o:['Towel','Sponge','Mop','Rain'], a:0 },
+            { q:'Speaks without a mouth, hears without ears?', o:['Echo','Radio','An echo','Wind'], a:2 },
+            { q:'Travels world while staying in corner?', o:['Stamp','Letter','Plane','Thought'], a:0 },
+            { q:'Full of holes but holds water?', o:['Net','Sponge','Sieve','Bucket'], a:1 },
+            { q:'Head and tail but no body?', o:['Coin','Snake','Matchstick','Needle'], a:0 },
+            { q:'Break without picking up?', o:['Glass','Promise','Stick','Ice'], a:1 },
+            { q:'Begins with T, ends with T, has T in it?', o:['Teapot','Tent','Tattoo','Table'], a:0 },
+            { q:'Runs around backyard but never moves?', o:['Fence','Tree','Path','Shadow'], a:0 },
+            { q:'Many teeth but can\'t bite?', o:['Comb','Saw','Zipper','Fork'], a:0 }
+          ]},
+        { id:'history', icon:'fas fa-landmark', name:'History IQ', desc:'Empires, revolutions & world events.', premium:true,
+          questions: [
+            { q:'When did WWII end?', o:['1944','1945','1946','1947'], a:1 },
+            { q:'First US President?', o:['Adams','Jefferson','Washington','Lincoln'], a:2 },
+            { q:'Ancient wonder in Babylon?', o:['Colossus','Hanging Gardens','Pyramid','Mausoleum'], a:1 },
+            { q:'Empire of Genghis Khan?', o:['Ottoman','Roman','Mongol','Persian'], a:2 },
+            { q:'Ship that brought Pilgrims in 1620?', o:['Santa Maria','Mayflower','Beagle','Victoria'], a:1 },
+            { q:'Year Berlin Wall fell?', o:['1987','1988','1989','1990'], a:2 },
+            { q:'Who discovered penicillin?', o:['Pasteur','Fleming','Koch','Salk'], a:1 },
+            { q:'Civilization that built Machu Picchu?', o:['Aztec','Maya','Inca','Olmec'], a:2 },
+            { q:'Longest war in history?', o:['100 Years','30 Years','Cold War','Peloponnesian'], a:0 },
+            { q:'Last pharaoh of Egypt?', o:['Nefertiti','Cleopatra','Hatshepsut','Ramesses'], a:1 }
+          ]},
+        { id:'movies', icon:'fas fa-film', name:'Movie IQ', desc:'Box office hits to cult classics.', premium:true,
+          questions: [
+            { q:'First Best Picture Oscar winner?', o:['Wings','Sunrise','Jazz Singer','Metropolis'], a:0 },
+            { q:'Director of "Pulp Fiction"?', o:['Spielberg','Tarantino','Scorsese','Fincher'], a:1 },
+            { q:'Highest-grossing film (unadjusted)?', o:['Endgame','Avatar','Titanic','Star Wars'], a:1 },
+            { q:'Year first "Star Wars" released?', o:['1975','1976','1977','1978'], a:2 },
+            { q:'Joker in "The Dark Knight"?', o:['Ledger','Phoenix','Nicholson','Leto'], a:0 },
+            { q:'Animated film with "Simba"?', o:['Bambi','Lion King','Tarzan','Brother Bear'], a:1 },
+            { q:'Famous "Terminator" line?', o:['Hasta la vista','I\'ll be back','Come with me','Get out'], a:1 },
+            { q:'Bollywood country?', o:['Pakistan','India','Bangladesh','Sri Lanka'], a:1 },
+            { q:'Director of "Inception"?', o:['Nolan','Villeneuve','Spielberg','Cameron'], a:0 },
+            { q:'"You can\'t handle the truth" movie?', o:['Few Good Men','Verdict','12 Angry Men','Witness'], a:0 }
+          ]},
+        { id:'tech', icon:'fas fa-laptop-code', name:'Tech IQ', desc:'Programming, gadgets & innovation.', premium:true,
+          questions: [
+            { q:'HTML stands for?', o:['HyperText Markup Language','High Tech Modern Language','HyperTransfer Markup','Home Tool Markup'], a:0 },
+            { q:'Company behind Android?', o:['Apple','Microsoft','Google','Samsung'], a:2 },
+            { q:'Language for iOS development?', o:['Kotlin','Swift','Java','C#'], a:1 },
+            { q:'AI stands for?', o:['Automated Intelligence','Artificial Intelligence','Augmented','Active'], a:1 },
+            { q:'Founded by Mark Zuckerberg?', o:['Twitter','Instagram','Facebook','Snapchat'], a:2 },
+            { q:'CPU stands for?', o:['Central Processing Unit','Computer Personal Unit','Central Program','Core Processing'], a:0 },
+            { q:'Makes PlayStation?', o:['Microsoft','Nintendo','Sony','Sega'], a:2 },
+            { q:'Most popular language in 2025?', o:['Python','Java','JavaScript','C++'], a:0 },
+            { q:'VPN stands for?', o:['Virtual Personal Network','Virtual Private Network','Verified Protocol','Visual Private'], a:1 },
+            { q:'Year first iPhone released?', o:['2005','2006','2007','2008'], a:2 }
+          ]},
+        { id:'math', icon:'fas fa-calculator', name:'Math IQ', desc:'Numbers, patterns & logic.', premium:true,
+          questions: [
+            { q:'15% of 200?', o:['25','30','35','40'], a:1 },
+            { q:'Square root of 144?', o:['10','11','12','13'], a:2 },
+            { q:'7 × 8?', o:['48','56','64','72'], a:1 },
+            { q:'Next prime after 11?', o:['13','17','19','23'], a:0 },
+            { q:'Sides of a dodecagon?', o:['10','12','14','16'], a:1 },
+            { q:'2^10?', o:['512','1024','2048','256'], a:1 },
+            { q:'Pi to 2 decimal places?', o:['3.14','3.16','3.12','3.18'], a:0 },
+            { q:'Triangle angles 90°, 45°, third?', o:['30°','45°','60°','90°'], a:1 },
+            { q:'0.5 as simplest fraction?', o:['1/4','1/3','1/2','2/3'], a:2 },
+            { q:'Zeros in one million?', o:['5','6','7','8'], a:1 }
+          ]}
+    ];
+
+    // ========================
+    // RENDER CATEGORIES
+    // ========================
     function renderCategories() {
+        const grid = document.getElementById('categoriesGrid');
         grid.innerHTML = '';
         categories.forEach((cat, idx) => {
             const isLocked = cat.premium && !premiumUnlocked;
             const card = document.createElement('div');
             card.className = 'category-card';
-            card.style.animationDelay = `${idx * 0.06}s`;
-
+            card.style.animation = `fadeInUp 0.5s ease-out ${idx * 0.05}s both`;
             card.innerHTML = `
                 ${cat.premium ? '<div class="premium-tag"><i class="fas fa-crown"></i> Premium</div>' : ''}
                 <div class="icon-wrap"><i class="${cat.icon}"></i></div>
                 <h3>${cat.name}</h3>
                 <p>${cat.desc}</p>
-                <span class="questions-count">
-                    <i class="fas ${isLocked ? 'fa-lock' : 'fa-book-open'}"></i>
-                    ${isLocked ? 'Premium Only' : '10 Questions'}
-                </span>
+                <span class="questions-count"><i class="fas ${isLocked ? 'fa-lock' : 'fa-book-open'}"></i> ${isLocked ? 'Premium Only' : '10 Questions'}</span>
             `;
-
             card.onclick = () => {
                 if (isLocked) {
-                    showToast('This test is premium. Unlock Premium to access!', 'error');
-                    document.getElementById('premium').scrollIntoView({ behavior: 'smooth' });
+                    showToast('Premium test! Unlock to access all categories.', 'error');
+                    switchTab('premium');
                     return;
                 }
                 startQuiz(cat);
             };
-
             grid.appendChild(card);
         });
     }
@@ -1567,15 +1809,14 @@
     let currentQuiz = null;
     let currentQIndex = 0;
     let score = 0;
+    let correctAnswers = 0;
+    let wrongAnswers = 0;
     let timerInterval = null;
     let timeLeft = 5;
     let answered = false;
-    let correctAnswers = 0;
-    let wrongAnswers = 0;
 
     function startQuiz(cat) {
         currentQuiz = JSON.parse(JSON.stringify(cat));
-        // Shuffle questions
         currentQuiz.questions = currentQuiz.questions.sort(() => Math.random() - 0.5);
         currentQIndex = 0;
         score = 0;
@@ -1589,7 +1830,6 @@
         const container = document.getElementById('quizContent');
         const q = currentQuiz.questions[currentQIndex];
         const total = currentQuiz.questions.length;
-        const idx = currentQIndex;
 
         container.innerHTML = `
             <div class="quiz-header">
@@ -1600,25 +1840,22 @@
                     <span><i class="fas fa-list"></i> ${total} Questions</span>
                 </div>
             </div>
-            <div class="quiz-timer-bar">
-                <div class="quiz-timer-fill" id="timerFill"></div>
-            </div>
+            <div class="quiz-timer-bar"><div class="quiz-timer-fill" id="timerFill"></div></div>
             <div class="quiz-progress">
-                <span>Question <span class="qp-current">${idx + 1}</span> of ${total}</span>
-                <span><i class="fas fa-star" style="color:#f7c948;"></i> Score: ${(score / total * 100).toFixed(0)}%</span>
+                <span>Question <span class="qp-current">${currentQIndex + 1}</span> of ${total}</span>
+                <span><i class="fas fa-star" style="color:#f7c948;"></i> ${(score / total * 100).toFixed(0)}%</span>
             </div>
             <div class="quiz-question">${q.q}</div>
             <div class="quiz-options" id="quizOptions">
-                ${q.options.map((opt, oi) => `
-                    <div class="quiz-option" data-optindex="${oi}" onclick="selectOption(${oi})">
+                ${q.o.map((opt, oi) => `
+                    <div class="quiz-option" data-oi="${oi}" onclick="selectOption(${oi})">
                         <div class="letter">${String.fromCharCode(65 + oi)}</div>
                         <span>${opt}</span>
                     </div>
                 `).join('')}
             </div>
-            <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuestion()">Next Question <i class="fas fa-arrow-right"></i></button>
+            <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuestion()">Next <i class="fas fa-arrow-right"></i></button>
         `;
-
         answered = false;
         timeLeft = 5;
         updateTimerBar();
@@ -1629,83 +1866,60 @@
         clearInterval(timerInterval);
         timeLeft = 5;
         updateTimerBar();
-
         timerInterval = setInterval(() => {
             timeLeft -= 0.1;
             updateTimerBar();
-            if (timeLeft <= 0) {
-                clearInterval(timerInterval);
-                timeUp();
-            }
+            if (timeLeft <= 0) { clearInterval(timerInterval); timeUp(); }
         }, 100);
     }
 
     function updateTimerBar() {
         const fill = document.getElementById('timerFill');
-        if (fill) {
-            const pct = (timeLeft / 5) * 100;
-            fill.style.width = `${Math.max(0, pct)}%`;
-            if (pct < 30) fill.style.background = 'linear-gradient(90deg, #ef4444, #f97316)';
-            else if (pct < 60) fill.style.background = 'linear-gradient(90deg, #f7c948, #ff6b35)';
-            else fill.style.background = 'linear-gradient(90deg, #22c55e, #f7c948)';
-        }
+        if (!fill) return;
+        const pct = (timeLeft / 5) * 100;
+        fill.style.width = Math.max(0, pct) + '%';
+        if (pct < 30) fill.style.background = 'linear-gradient(90deg, #ef4444, #f97316)';
+        else if (pct < 60) fill.style.background = 'linear-gradient(90deg, #f7c948, #ff6b35)';
+        else fill.style.background = 'linear-gradient(90deg, #22c55e, #f7c948)';
     }
 
     function timeUp() {
         if (answered) return;
         answered = true;
         wrongAnswers++;
-        // Highlight correct answer
         const options = document.querySelectorAll('.quiz-option');
-        const correctIdx = currentQuiz.questions[currentQIndex].answer;
+        const correctIdx = currentQuiz.questions[currentQIndex].a;
         options.forEach((el, i) => {
             el.classList.add('disabled');
             if (i === correctIdx) el.classList.add('correct');
             else if (el.classList.contains('selected')) el.classList.add('wrong');
         });
-        showNextBtn();
+        document.getElementById('quizNextBtn').style.display = 'block';
     }
 
     function selectOption(idx) {
         if (answered) return;
         clearInterval(timerInterval);
         answered = true;
-
         const options = document.querySelectorAll('.quiz-option');
-        const correctIdx = currentQuiz.questions[currentQIndex].answer;
-
+        const correctIdx = currentQuiz.questions[currentQIndex].a;
         options.forEach((el, i) => {
             el.classList.add('disabled');
             if (i === idx) el.classList.add('selected');
             if (i === correctIdx) el.classList.add('correct');
         });
-
-        if (idx === correctIdx) {
-            score++;
-            correctAnswers++;
-        } else {
-            wrongAnswers++;
-            options[idx].classList.add('wrong');
-        }
-
-        showNextBtn();
-    }
-
-    function showNextBtn() {
-        const btn = document.getElementById('quizNextBtn');
-        btn.style.display = 'block';
-        btn.innerHTML = (currentQIndex < currentQuiz.questions.length - 1)
+        if (idx === correctIdx) { score++; correctAnswers++; }
+        else { wrongAnswers++; options[idx].classList.add('wrong'); }
+        document.getElementById('quizNextBtn').style.display = 'block';
+        document.getElementById('quizNextBtn').innerHTML = (currentQIndex < currentQuiz.questions.length - 1)
             ? 'Next Question <i class="fas fa-arrow-right"></i>'
             : 'See Results <i class="fas fa-trophy"></i>';
     }
 
     function nextQuestion() {
         currentQIndex++;
-        if (currentQIndex >= currentQuiz.questions.length) {
-            showResults();
-        } else {
-            renderQuestion();
-        }
+        if (currentQIndex >= currentQuiz.questions.length) showResults();
+        else renderQuestion();
     }
 
     function showResults() {
@@ -1714,43 +1928,56 @@
         const total = currentQuiz.questions.length;
         const pct = (score / total) * 100;
         let icon, grade;
-
         if (pct >= 90) { icon = '🏆'; grade = 'IQ Legend'; }
         else if (pct >= 70) { icon = '🔥'; grade = 'IQ Master'; }
         else if (pct >= 50) { icon = '💪'; grade = 'IQ Warrior'; }
         else if (pct >= 30) { icon = '📚'; grade = 'IQ Student'; }
         else { icon = '🤔'; grade = 'IQ Rookie'; }
 
-        const isHighScore = pct >= 70;
+        // Save to history
+        testHistory.push({
+            test: currentQuiz.name,
+            icon: currentQuiz.icon,
+            score: score,
+            total: total,
+            pct: Math.round(pct),
+            date: new Date().toLocaleDateString(),
+            grade: grade
+        });
+        localStorage.setItem('zeusHistory', JSON.stringify(testHistory));
+
+        // Update leaderboard
+        const existing = leaderboard.find(l => l.name === username);
+        if (existing) {
+            if (pct > existing.score) existing.score = pct;
+            existing.avg = (existing.avg + pct) / 2;
+        } else {
+            leaderboard.push({ name: username, score: pct, avg: pct, premium: premiumUnlocked });
+        }
+        leaderboard.sort((a, b) => b.score - a.score);
+        localStorage.setItem('zeusLeaderboard', JSON.stringify(leaderboard));
+
+        updateDashboard();
 
         container.innerHTML = `
             <div class="quiz-results" style="display:block;">
                 <div class="result-icon">${icon}</div>
-                <div class="result-score">${pct.toFixed(0)}%</div>
+                <div class="result-score">${Math.round(pct)}%</div>
                 <div class="result-label">${grade} · ${score}/${total} correct</div>
                 <div class="result-details">
-                    <div class="result-detail">
-                        <div class="rd-num" style="color:#22c55e;">${correctAnswers}</div>
-                        <div class="rd-label">Correct</div>
-                    </div>
-                    <div class="result-detail">
-                        <div class="rd-num" style="color:#ef4444;">${wrongAnswers}</div>
-                        <div class="rd-label">Wrong</div>
-                    </div>
-                    <div class="result-detail">
-                        <div class="rd-num">${total}</div>
-                        <div class="rd-label">Total</div>
-                    </div>
+                    <div class="result-detail"><div class="rd-num" style="color:#22c55e;">${correctAnswers}</div><div class="rd-label">Correct</div></div>
+                    <div class="result-detail"><div class="rd-num" style="color:#ef4444;">${wrongAnswers}</div><div class="rd-label">Wrong</div></div>
+                    <div class="result-detail"><div class="rd-num">${total}</div><div class="rd-label">Total</div></div>
                 </div>
-                ${!premiumUnlocked && isHighScore ? `
+                ${!premiumUnlocked && pct >= 70 ? `
                     <div class="result-premium-cta">
-                        <p><i class="fas fa-crown" style="color:#f7c948;"></i> Great score! Unlock Premium for detailed analytics, leaderboard access & exclusive tests.</p>
-                        <button class="btn-primary" onclick="closeQuizModal();document.getElementById('premium').scrollIntoView({behavior:'smooth'})">Unlock Premium for $1</button>
+                        <p><i class="fas fa-crown" style="color:#f7c948;"></i> Great score! Unlock Premium for full analytics, all tests & exclusive features.</p>
+                        <button class="btn-primary" onclick="closeQuizModal();switchTab('premium')" style="padding:12px 28px;font-size:0.85rem;">Unlock for $1</button>
                     </div>
                 ` : ''}
-                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;">
-                    <button class="btn-primary" onclick="startQuiz(currentQuiz)"><i class="fas fa-redo"></i> Retry</button>
-                    <button class="btn-secondary" onclick="closeQuizModal()"><i class="fas fa-th-large"></i> All Tests</button>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
+                    <button class="btn-primary" onclick="startQuiz(currentQuiz)" style="padding:12px 28px;font-size:0.85rem;"><i class="fas fa-redo"></i> Retry</button>
+                    <button class="btn-secondary" onclick="closeQuizModal()" style="padding:12px 28px;font-size:0.85rem;"><i class="fas fa-th-large"></i> All Tests</button>
                 </div>
             </div>
         `;
@@ -1760,6 +1987,152 @@
         document.getElementById('quizModal').classList.remove('active');
         clearInterval(timerInterval);
     }
+
+    // ========================
+    // DASHBOARD
+    // ========================
+    function updateDashboard() {
+        const total = testHistory.length;
+        const correctTotal = testHistory.reduce((sum, t) => sum + t.score, 0);
+        const totalQ = testHistory.reduce((sum, t) => sum + t.total, 0);
+        const avgPct = totalQ > 0 ? Math.round((correctTotal / totalQ) * 100) : 0;
+        const bestScore = testHistory.length > 0 ? Math.max(...testHistory.map(t => t.pct)) : 0;
+
+        document.getElementById('dashTests').textContent = total;
+        document.getElementById('dashCorrect').textContent = correctTotal;
+        document.getElementById('dashAvg').textContent = avgPct + '%';
+
+        // Rank
+        const myRank = leaderboard.findIndex(l => l.name === username) + 1;
+        document.getElementById('dashRank').textContent = myRank > 0 ? '#' + myRank : '—';
+
+        // Recent activity
+        const list = document.getElementById('activityList');
+        if (testHistory.length === 0) {
+            list.innerHTML = `<div class="empty-dash"><i class="fas fa-inbox"></i><p>No activity yet. Take your first IQ test!</p></div>`;
+        } else {
+            let html = '';
+            const recent = [...testHistory].reverse().slice(0, 5);
+            recent.forEach(t => {
+                html += `<div class="activity-item">
+                    <div class="ai-icon"><i class="${t.icon}"></i></div>
+                    <div class="ai-text">
+                        <div class="ai-title">${t.test} · ${t.grade}</div>
+                        <div class="ai-meta">${t.date} · ${t.score}/${t.total} correct</div>
+                    </div>
+                    <div class="ai-score">${t.pct}%</div>
+                </div>`;
+            });
+            list.innerHTML = html;
+        }
+
+        // Premium banner
+        const banner = document.getElementById('premStatusText');
+        if (premiumUnlocked) {
+            banner.innerHTML = '<i class="fas fa-crown" style="color:#f7c948;"></i> Premium Active · All features unlocked. Thank you, Zeus!';
+        }
+    }
+
+    // ========================
+    // LEADERBOARD
+    // ========================
+    function renderLeaderboard() {
+        const container = document.getElementById('leaderboardRows');
+        if (leaderboard.length === 0) {
+            container.innerHTML = `<div style="padding:40px;text-align:center;color:#555;"><i class="fas fa-trophy" style="font-size:2rem;margin-bottom:10px;color:#333;display:block;"></i>No scores yet. Be the first!</div>`;
+            return;
+        }
+        let html = '';
+        leaderboard.slice(0, 20).forEach((l, i) => {
+            const rankClass = i === 0 ? 'top1' : i === 1 ? 'top2' : i === 2 ? 'top3' : '';
+            const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : '';
+            const isYou = l.name === username;
+            html += `<div class="lb-row ${isYou ? 'lb-you' : ''}">
+                <div class="lb-rank ${rankClass}">${medal || '#' + (i + 1)}</div>
+                <div class="lb-name">
+                    <span class="name-text">${l.name}</span>
+                    ${l.premium ? '<span class="prem-badge-mini"><i class="fas fa-crown"></i></span>' : ''}
+                    ${isYou ? '<span style="font-size:0.65rem;color:#f7c948;font-family:Rajdhani;">(You)</span>' : ''}
+                </div>
+                <div class="lb-score">${Math.round(l.score)}%</div>
+                <div class="lb-avg">${Math.round(l.avg || l.score)}% avg</div>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    // ========================
+    // TOOLS
+    // ========================
+    const tools = [
+        { icon:'fas fa-calculator', name:'IQ Calculator', desc:'Calculate your estimated IQ based on test performance.', premium:false },
+        { icon:'fas fa-stopwatch', name:'Reaction Timer', desc:'Test your reaction speed. How fast can you click?', premium:false },
+        { icon:'fas fa-keyboard', name:'Typing Speed', desc:'Measure your WPM and accuracy.', premium:false },
+        { icon:'fas fa-memory', name:'Memory Grid', desc:'Classic memory game. Remember the pattern!', premium:true },
+        { icon:'fas fa-brain', name:'Brain Training', desc:'Daily cognitive exercises to sharpen your mind.', premium:true },
+        { icon:'fas fa-chart-line', name:'Performance Analyzer', desc:'Deep analytics of your test history and trends.', premium:true },
+        { icon:'fas fa-file-pdf', name:'PDF Report', desc:'Generate a detailed PDF report of your IQ journey.', premium:true },
+        { icon:'fas fa-users', name:'Compare Tool', desc:'Compare your scores with friends and community.', premium:true }
+    ];
+
+    function renderTools() {
+        const grid = document.getElementById('toolsGrid');
+        grid.innerHTML = '';
+        tools.forEach((t, i) => {
+            const isLocked = t.premium && !premiumUnlocked;
+            const card = document.createElement('div');
+            card.className = 'tool-card';
+            card.style.animation = `fadeInUp 0.5s ease-out ${i * 0.04}s both`;
+            card.innerHTML = `
+                <div class="tc-icon"><i class="${t.icon}"></i></div>
+                <h3>${t.name}</h3>
+                <p>${t.desc}</p>
+                ${t.premium ? '<span class="prem-badge-sm"><i class="fas fa-crown"></i> Premium</span>' : '<span style="color:#555;font-size:0.7rem;font-family:Rajdhani;">Free Tool</span>'}
+            `;
+            card.onclick = () => {
+                if (isLocked) {
+                    showToast('This is a premium tool. Upgrade to access!', 'error');
+                    switchTab('premium');
+                } else {
+                    showToast(`${t.name} — Coming soon in the next update!`, 'info');
+                }
+            };
+            grid.appendChild(card);
+        });
+    }
+    renderTools();
+
+    // ========================
+    // MARKETPLACE
+    // ========================
+    const marketplace = [
+        { name:'IQ Mastery Guide', desc:'Complete guide to boosting your IQ score.', price:'$2.99', icon:'fas fa-book' },
+        { name:'Premium Profile Pack', desc:'Custom profile themes & badges.', price:'$1.99', icon:'fas fa-palette' },
+        { name:'Test Creator Kit', desc:'Create and share your own IQ tests.', price:'$4.99', icon:'fas fa-plus-circle' },
+        { name:'Zeus Merch Bundle', desc:'Exclusive digital merch pack.', price:'$3.99', icon:'fas fa-tshirt' }
+    ];
+
+    function renderMarketplace() {
+        const grid = document.getElementById('marketplaceGrid');
+        grid.innerHTML = '';
+        marketplace.forEach((item, i) => {
+            const div = document.createElement('div');
+            div.className = 'mkt-item';
+            div.style.animation = `fadeInUp 0.5s ease-out ${i * 0.06}s both`;
+            const locked = !premiumUnlocked;
+            div.innerHTML = `
+                <div class="mkt-preview"><i class="${item.icon}"></i></div>
+                <h3>${item.name}</h3>
+                <div class="mkt-desc">${item.desc}</div>
+                <div class="mkt-footer">
+                    <span class="mkt-price">${item.price}</span>
+                    <button class="mkt-btn" onclick="${locked ? 'switchTab(\'premium\')' : 'showToast(\'Checkout coming soon!\',\'info\')'}">${locked ? 'Unlock' : 'Buy Now'}</button>
+                </div>
+            `;
+            grid.appendChild(div);
+        });
+    }
+    renderMarketplace();
 
     // ========================
     // PREMIUM UNLOCK
@@ -1773,33 +2146,53 @@
             premiumUnlocked = true;
             localStorage.setItem('zeusPremium', 'true');
             msg.className = 'premium-code-msg success';
-            msg.innerHTML = '<i class="fas fa-check-circle"></i> Premium Unlocked! Welcome to Zeus IQ Premium.';
+            msg.innerHTML = '<i class="fas fa-check-circle"></i> Premium Unlocked! Welcome to ZEUS HUB Premium.';
             renderCategories();
-            showToast('Premium Unlocked! Enjoy all features 🎉', 'success');
-            // Play a subtle celebration
+            updateDashboard();
+            renderTools();
+            renderMarketplace();
+            renderLeaderboard();
+            showToast('🎉 ZEUS HUB Premium Activated! All features unlocked.', 'success');
             input.value = '';
+            setTimeout(() => msg.innerHTML = '', 5000);
         } else if (code === '') {
             msg.className = 'premium-code-msg error';
             msg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter a premium code.';
         } else {
             msg.className = 'premium-code-msg error';
-            msg.innerHTML = '<i class="fas fa-times-circle"></i> Invalid code. Contact Zeus on WhatsApp to get your premium code.';
+            msg.innerHTML = '<i class="fas fa-times-circle"></i> Invalid code. Contact Zeus on WhatsApp to get yours.';
         }
-
-        // Clear message after 4 seconds
-        setTimeout(() => {
-            if (msg.classList.contains('success')) {
-                // Keep success visible
-            } else {
-                msg.innerHTML = '';
-            }
-        }, 4000);
+        setTimeout(() => { if (!msg.classList.contains('success')) msg.innerHTML = ''; }, 4000);
     }
 
-    // Enter key support
     document.getElementById('premiumCodeInput').addEventListener('keydown', (e) => {
         if (e.key === 'Enter') redeemPremiumCode();
     });
+
+    // ========================
+    // SET USERNAME
+    // ========================
+    let nameTimeout = setTimeout(() => {}, 0);
+    function promptUsername() {
+        const saved = localStorage.getItem('zeusUsername');
+        if (!saved) {
+            const name = prompt('Welcome to ZEUS HUB! Enter your display name:', 'Player');
+            if (name && name.trim()) {
+                username = name.trim();
+                localStorage.setItem('zeusUsername', username);
+            }
+        } else {
+            username = saved;
+        }
+        // Add user to leaderboard if not there
+        if (!leaderboard.find(l => l.name === username)) {
+            leaderboard.push({ name: username, score: 0, avg: 0, premium: premiumUnlocked });
+            localStorage.setItem('zeusLeaderboard', JSON.stringify(leaderboard));
+        }
+        updateDashboard();
+        renderLeaderboard();
+    }
+    promptUsername();
 
     // ========================
     // TOAST
@@ -1810,41 +2203,18 @@
         toastMsg.textContent = msg;
         toast.className = `toast ${type}`;
         toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3500);
+        setTimeout(() => toast.classList.remove('show'), 3200);
     }
 
     // ========================
-    // SMOOTH SCROLL FOR ANCHORS
+    // INIT
     // ========================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
-        });
-    });
+    updateDashboard();
+    renderLeaderboard();
 
-    // ========================
-    // INTERSECTION OBSERVER FOR ANIMATIONS
-    // ========================
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.category-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s ease-out';
-        observer.observe(el);
-    });
-
-    console.log('%c🔥 ZEUS IQ ACTIVATED', 'font-size:24px;font-weight:bold;color:#f7c948;');
+    console.log('%c🔥 ZEUS HUB ACTIVATED', 'font-size:28px;font-weight:bold;color:#f7c948;');
     console.log('%cPremium Code: 123000', 'font-size:16px;color:#888;');
+    console.log('%cOwner: Zeus | +234 906 676 0078', 'font-size:14px;color:#aaa;');
 </script>
 </body>
 </html>
